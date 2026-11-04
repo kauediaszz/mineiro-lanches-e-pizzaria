@@ -22,7 +22,7 @@ export function CategoryNav({
                 className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all ${
                   isActive
                     ? "bg-brand-gradient text-white shadow-brand"
-                    : "bg-brand-pink/8 text-brand-violet/70 hover:bg-brand-pink/15"
+                    : "bg-brand-pink/10 text-brand-violet/70 hover:bg-brand-pink/20"
                 }`}
               >
                 <span className="mr-1">{cat.emoji}</span>

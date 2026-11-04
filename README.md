@@ -35,8 +35,16 @@ Tudo que muda no dia a dia esta isolado em 2 arquivos + uma pasta de imagens:
 - `address`, `social.instagram`, etc.
 
 ### 3. Imagens
-- Fotos dos produtos: coloque em `public/menu/` e referencie em `menu.ts`.
+- Fotos dos produtos: coloque as originais em `imagens/` e rode `npm run images`.
+  O script gera versões leves (WebP, 900px) em `public/menu/`. O nome do arquivo
+  vira o do site sem acento nem espaço (`homem de ferro.jpg` -> `homem-de-ferro.webp`).
+  Depois referencie em `menu.ts` (veja o objeto `IMG` no topo do arquivo).
+- Produtos sem foto usam o emoji (se tiver) ou a coruja padrão.
 - Logo da coruja: substitua `public/brand/logo.svg` pelo arquivo real.
+
+### 4. Horário de funcionamento
+- Em `src/data/config.ts`, em `hours.schedule`. O "Aberto agora / Fechado" do topo
+  é calculado sozinho (horário de Brasília) a partir dessa lista.
 
 ## Deploy na Vercel
 

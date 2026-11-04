@@ -8,70 +8,71 @@ import {
   useReducer,
   ReactNode,
 } from "react";
-import type { Product } from "@/data/menu";
 
 export interface CartItem {
-  id: string;
+  /** Identifica a combinação exata (produto + tamanho + escolhas + adicionais) */
+  lineId: string;
+  productId: string;
   name: string;
+  /** Ex: "500 ml", "Combo com batata e Guaracamp" */
+  variantLabel?: string;
+  /** Linhas extras mostradas no pedido: sabores, caldas, adicionais... */
+  details: string[];
+  /** Preço de UMA unidade (já com os adicionais) */
   price: number;
   quantity: number;
 }
+
+type NewCartLine = Omit<CartItem, "quantity">;
 
 interface CartState {
   items: CartItem[];
 }
 
 type CartAction =
-  | { type: "ADD"; product: Product }
-  | { type: "INCREMENT"; id: string }
-  | { type: "DECREMENT"; id: string }
-  | { type: "REMOVE"; id: string }
+  | { type: "ADD"; line: NewCartLine; quantity: number }
+  | { type: "INCREMENT"; lineId: string }
+  | { type: "DECREMENT"; lineId: string }
+  | { type: "REMOVE"; lineId: string }
   | { type: "CLEAR" }
   | { type: "HYDRATE"; items: CartItem[] };
 
-const STORAGE_KEY = "madrugadao-cart";
+// v2: o formato do carrinho mudou (tamanhos, sabores e adicionais)
+const STORAGE_KEY = "madrugadao-cart-v2";
 
 function reducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case "ADD": {
-      const existing = state.items.find((i) => i.id === action.product.id);
+      const existing = state.items.find((i) => i.lineId === action.line.lineId);
       if (existing) {
         return {
           items: state.items.map((i) =>
-            i.id === action.product.id
-              ? { ...i, quantity: i.quantity + 1 }
+            i.lineId === action.line.lineId
+              ? { ...i, quantity: i.quantity + action.quantity }
               : i
           ),
         };
       }
       return {
-        items: [
-          ...state.items,
-          {
-            id: action.product.id,
-            name: action.product.name,
-            price: action.product.price,
-            quantity: 1,
-          },
-        ],
+        items: [...state.items, { ...action.line, quantity: action.quantity }],
       };
     }
     case "INCREMENT":
       return {
         items: state.items.map((i) =>
-          i.id === action.id ? { ...i, quantity: i.quantity + 1 } : i
+          i.lineId === action.lineId ? { ...i, quantity: i.quantity + 1 } : i
         ),
       };
     case "DECREMENT":
       return {
         items: state.items
           .map((i) =>
-            i.id === action.id ? { ...i, quantity: i.quantity - 1 } : i
+            i.lineId === action.lineId ? { ...i, quantity: i.quantity - 1 } : i
           )
           .filter((i) => i.quantity > 0),
       };
     case "REMOVE":
-      return { items: state.items.filter((i) => i.id !== action.id) };
+      return { items: state.items.filter((i) => i.lineId !== action.lineId) };
     case "CLEAR":
       return { items: [] };
     case "HYDRATE":
@@ -81,16 +82,31 @@ function reducer(state: CartState, action: CartAction): CartState {
   }
 }
 
+function isValidItem(value: unknown): value is CartItem {
+  if (!value || typeof value !== "object") return false;
+  const item = value as Partial<CartItem>;
+  return (
+    typeof item.lineId === "string" &&
+    typeof item.productId === "string" &&
+    typeof item.name === "string" &&
+    typeof item.price === "number" &&
+    typeof item.quantity === "number" &&
+    item.quantity > 0 &&
+    Array.isArray(item.details)
+  );
+}
+
 interface CartContextValue {
   items: CartItem[];
   totalItems: number;
   totalPrice: number;
-  addItem: (product: Product) => void;
-  increment: (id: string) => void;
-  decrement: (id: string) => void;
-  removeItem: (id: string) => void;
+  addLine: (line: NewCartLine, quantity?: number) => void;
+  increment: (lineId: string) => void;
+  decrement: (lineId: string) => void;
+  removeItem: (lineId: string) => void;
   clear: () => void;
-  getQuantity: (id: string) => number;
+  /** Quantidade total de um produto no carrinho (somando todas as variações) */
+  getProductQuantity: (productId: string) => number;
 }
 
 const CartContext = createContext<CartContextValue | null>(null);
@@ -103,15 +119,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
-        const items = JSON.parse(raw) as CartItem[];
-        if (Array.isArray(items)) dispatch({ type: "HYDRATE", items });
+        const parsed: unknown = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          dispatch({ type: "HYDRATE", items: parsed.filter(isValidItem) });
+        }
       }
     } catch {
       // ignora erros de parse
     }
   }, []);
 
-  // Persiste no localStorage a cada mudanca
+  // Persiste no localStorage a cada mudança
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
@@ -130,13 +148,16 @@ export function CartProvider({ children }: { children: ReactNode }) {
       items: state.items,
       totalItems,
       totalPrice,
-      addItem: (product) => dispatch({ type: "ADD", product }),
-      increment: (id) => dispatch({ type: "INCREMENT", id }),
-      decrement: (id) => dispatch({ type: "DECREMENT", id }),
-      removeItem: (id) => dispatch({ type: "REMOVE", id }),
+      addLine: (line, quantity = 1) =>
+        dispatch({ type: "ADD", line, quantity }),
+      increment: (lineId) => dispatch({ type: "INCREMENT", lineId }),
+      decrement: (lineId) => dispatch({ type: "DECREMENT", lineId }),
+      removeItem: (lineId) => dispatch({ type: "REMOVE", lineId }),
       clear: () => dispatch({ type: "CLEAR" }),
-      getQuantity: (id) =>
-        state.items.find((i) => i.id === id)?.quantity ?? 0,
+      getProductQuantity: (productId) =>
+        state.items
+          .filter((i) => i.productId === productId)
+          .reduce((s, i) => s + i.quantity, 0),
     };
   }, [state.items]);
 

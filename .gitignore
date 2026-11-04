@@ -1,4 +1,8 @@
 # dependencies
+# arquivos que o Windows cria ao baixar imagens
+*Zone.Identifier
+
+# dependencies
 /node_modules
 /.pnp
 .pnp.js

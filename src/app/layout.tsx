@@ -12,7 +12,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: `${storeConfig.name} - Pedidos`,
+  title: `${storeConfig.name} · Faça seu pedido`,
   description: storeConfig.slogan,
 };
 

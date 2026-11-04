@@ -22,11 +22,16 @@ export function buildWhatsappOrderUrl(order: OrderInfo): string {
   lines.push("*Itens:*");
 
   items.forEach((item) => {
+    const title = item.variantLabel
+      ? `${item.name} (${item.variantLabel})`
+      : item.name;
+
     lines.push(
-      `• ${item.quantity}x ${item.name} — ${formatPrice(
+      `• ${item.quantity}x ${title} — ${formatPrice(
         item.price * item.quantity
       )}`
     );
+    item.details.forEach((detail) => lines.push(`   ◦ ${detail}`));
   });
 
   lines.push("");
@@ -34,7 +39,7 @@ export function buildWhatsappOrderUrl(order: OrderInfo): string {
   lines.push("");
 
   const paymentLabel =
-    paymentMethods.find((p) => p.id === payment)?.label ?? "Nao informado";
+    paymentMethods.find((p) => p.id === payment)?.label ?? "Não informado";
   lines.push(`*Forma de pagamento:* ${paymentLabel}`);
 
   if (payment === "dinheiro" && changeFor && changeFor.trim()) {
@@ -42,7 +47,7 @@ export function buildWhatsappOrderUrl(order: OrderInfo): string {
   }
 
   lines.push("");
-  lines.push(`*Endereco de entrega:*`);
+  lines.push(`*Endereço de entrega:*`);
   lines.push(address.trim());
 
   const text = encodeURIComponent(lines.join("\n"));
