@@ -1,62 +1,70 @@
-# Madrugadao Lanches 🦉
+# Template: site de pedidos para lanchonete
 
-Site de pedidos da lanchonete Madrugadao Lanches. Cardapio estilo totem de
-autoatendimento, mobile-first, com checkout que abre o WhatsApp com o pedido
-pronto. Front-end puro em Next.js, sem backend.
+Site de pedidos com cardápio estilo totem de autoatendimento, pensado para celular.
+O cliente monta o pedido e, ao finalizar, abre o **WhatsApp da loja com a mensagem
+pronta** (itens, total, endereço e forma de pagamento). Estático, sem backend,
+publicado no Cloudflare Pages.
 
-## Rodando localmente
+O objetivo deste projeto: **criar o site de uma loja nova entregando só três coisas**
+(e sem mexer em código).
+
+| O que entregar | Onde fica |
+|----------------|-----------|
+| O cardápio, escrito em texto | `conteudo/cardapio.md` |
+| Identidade da loja, cores e fonte | `conteudo/tema.md` |
+| As fotos (e o `logo.png`, se a loja tiver) | `conteudo/imagens/` |
+
+O projeto vem com uma **loja de exemplo** (Pizzaria do Zé) preenchida nesses arquivos,
+para servir de modelo.
+
+## Montar o site de uma loja nova
+
+A conversão do texto em dados do site é feita por uma **IA do seu editor** (Kiro, Copilot,
+Cursor etc.), seguindo o guia **[`AGENTS.md`](./AGENTS.md)**.
+
+1. Substitua `conteudo/cardapio.md` e `conteudo/tema.md` pelos da loja nova.
+2. Troque as imagens de `conteudo/imagens/` pelas da loja (e coloque `logo.png`, se houver).
+3. Peça à IA: *"Siga o AGENTS.md e monte o site com o conteúdo da pasta conteudo/."*
+4. A IA gera os dados, otimiza as imagens, valida e avisa o que estiver faltando.
+
+## Comandos
 
 ```bash
-npm install
-npm run dev
+npm install          # primeira vez
+npm run dev          # ver o site em http://localhost:3000
+npm run images       # otimiza conteudo/imagens -> public/ (fotos leves em WebP)
+npm run validar      # confere o cardápio, as fotos, as cores e a fonte
+npm run build        # gera o site estático na pasta out/
 ```
 
-Abra http://localhost:3000
+## Como o projeto é organizado
+
+```
+conteudo/                  <- o que muda de loja para loja (você edita aqui)
+  cardapio.md
+  tema.md
+  imagens/
+AGENTS.md                  <- guia para a IA converter o texto em dados
+src/
+  data/                    <- dados GERADOS (menu.json, store.json, theme.json, images.manifest.json)
+  theme/font.ts            <- fonte GERADA
+  ...                      <- código do site (não muda de loja para loja)
+scripts/                   <- optimize-images.mjs e validar.mjs
+public/menu, public/brand  <- imagens otimizadas (geradas)
+```
+
+Os arquivos gerados vão para o Git: o Cloudflare só executa `npm run build`.
+
+## Publicar no Cloudflare Pages
+
+Crie o projeto pela aba **Pages** (Connect to Git) e use:
+
+| Campo | Valor |
+|-------|-------|
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Variável de ambiente | `NODE_VERSION` = `20` |
 
 ## Stack
 
-- Next.js 15 (App Router) + React 19 + TypeScript
-- Tailwind CSS
-- Deploy: Vercel
-
-## Como editar o conteudo (o que voce vai mexer)
-
-Tudo que muda no dia a dia esta isolado em 2 arquivos + uma pasta de imagens:
-
-### 1. Cardapio -> `src/data/menu.ts`
-- Edite nome, descricao e preco dos itens.
-- Para adicionar item: copie um bloco, mude o `id` (precisa ser unico) e a `category`.
-- Campo `image`: caminho da foto (ex: `/menu/classic-burger.jpg`). Deixe `""`
-  para usar o placeholder com gradiente.
-
-### 2. Dados da loja -> `src/data/config.ts`
-- `whatsapp`: numero no formato `55 + DDD + numero` (ja preenchido).
-- `hours`: horario de funcionamento.
-- `address`, `social.instagram`, etc.
-
-### 3. Imagens
-- Fotos dos produtos: coloque as originais em `imagens/` e rode `npm run images`.
-  O script gera versões leves (WebP, 900px) em `public/menu/`. O nome do arquivo
-  vira o do site sem acento nem espaço (`homem de ferro.jpg` -> `homem-de-ferro.webp`).
-  Depois referencie em `menu.ts` (veja o objeto `IMG` no topo do arquivo).
-- Produtos sem foto usam o emoji (se tiver) ou a coruja padrão.
-- Logo da coruja: substitua `public/brand/logo.svg` pelo arquivo real.
-
-### 4. Horário de funcionamento
-- Em `src/data/config.ts`, em `hours.schedule`. O "Aberto agora / Fechado" do topo
-  é calculado sozinho (horário de Brasília) a partir dessa lista.
-
-## Deploy na Vercel
-
-1. Suba o projeto para um repositorio Git (GitHub/GitLab/Bitbucket).
-2. Em vercel.com, clique em "Add New Project" e importe o repositorio.
-3. A Vercel detecta Next.js automaticamente. Clique em "Deploy".
-
-Nenhuma variavel de ambiente e necessaria.
-
-## Fluxo do pedido
-
-Cardapio -> cliente adiciona itens (animacao ao clicar) -> barra "Ver pedido"
--> pagina `/pedido`: revisa itens, informa endereco e forma de pagamento
-(Pix / Cartao / Dinheiro, com campo de troco) -> botao "Fazer pedido no
-WhatsApp" abre o chat da loja com a mensagem montada.
+Next.js 15 (App Router, export estático) · React 19 · TypeScript · Tailwind CSS.

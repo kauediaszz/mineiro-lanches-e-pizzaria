@@ -62,6 +62,9 @@ export interface OpenStatus {
 }
 
 export function getOpenStatus(date: Date = new Date()): OpenStatus {
+  // Loja sem horário cadastrado: não mostramos aberto/fechado
+  if (schedule.length === 0) return { isOpen: false, text: "" };
+
   const { day, minutes } = getBrazilClock(date);
 
   // Ainda dentro do expediente de ontem (ex: sábado 19h às 2h, agora é domingo 00h30)

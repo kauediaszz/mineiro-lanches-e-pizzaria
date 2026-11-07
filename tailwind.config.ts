@@ -1,5 +1,13 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * As cores NÃO ficam escritas aqui. Elas vêm de variáveis CSS que o
+ * layout.tsx define a partir de src/data/theme.json (gerado do tema.md).
+ * O formato "rgb(var(--x) / <alpha-value>)" mantém funcionando as
+ * transparências do Tailwind (ex.: border-brand-secondary/20).
+ */
+const color = (name: string) => `rgb(var(--color-${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,25 +17,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta da marca Madrugadão Lanches
+        background: color("background"),
+        foreground: color("foreground"),
         brand: {
-          violet: "#7c3aed",
-          "violet-light": "#a78bfa",
-          pink: "#ec4899",
-          "pink-light": "#f9a8d4",
+          primary: color("primary"),
+          "primary-light": color("primary-light"),
+          secondary: color("secondary"),
+          "secondary-light": color("secondary-light"),
         },
       },
       backgroundImage: {
         "brand-gradient":
-          "linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)",
+          "linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-secondary)) 100%)",
         "brand-gradient-soft":
-          "linear-gradient(135deg, #a78bfa 0%, #f9a8d4 100%)",
+          "linear-gradient(135deg, rgb(var(--color-primary-light)) 0%, rgb(var(--color-secondary-light)) 100%)",
       },
       fontFamily: {
-        sans: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        // A fonte é carregada em src/theme/font.ts (gerado do tema.md)
+        sans: ["var(--font-brand)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        brand: "0 10px 30px -10px rgba(124, 58, 237, 0.4)",
+        brand: "0 10px 30px -10px rgb(var(--color-primary) / 0.4)",
       },
       keyframes: {
         "pop-in": {

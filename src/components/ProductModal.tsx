@@ -101,17 +101,17 @@ export function ProductModal({
       <button
         aria-label="Fechar"
         onClick={onClose}
-        className="absolute inset-0 animate-fade-in bg-[#1f1033]/60 backdrop-blur-sm"
+        className="absolute inset-0 animate-fade-in bg-foreground/60 backdrop-blur-sm"
       />
 
-      <div className="relative flex max-h-[92dvh] w-full max-w-lg animate-sheet-up flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl">
+      <div className="relative flex max-h-[92dvh] w-full max-w-lg animate-sheet-up flex-col overflow-hidden rounded-t-3xl bg-background shadow-2xl sm:rounded-3xl">
         <div className="overflow-y-auto overscroll-contain">
           {/* Foto que vem pra frente */}
-          <div className="relative bg-gradient-to-b from-white to-brand-pink/10 px-6 pb-2 pt-6">
+          <div className="relative bg-gradient-to-b from-background to-brand-secondary/10 px-6 pb-2 pt-6">
             <button
               onClick={onClose}
               aria-label="Fechar"
-              className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white text-xl text-brand-violet shadow-md transition-transform active:scale-90"
+              className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-background text-xl text-brand-primary shadow-md transition-transform active:scale-90"
             >
               ×
             </button>
@@ -134,7 +134,7 @@ export function ProductModal({
                 {product.description}
               </p>
               {product.variants.length === 1 && (
-                <p className="mt-2 text-lg font-extrabold text-brand-violet">
+                <p className="mt-2 text-lg font-extrabold text-brand-primary">
                   {formatPrice(product.variants[0].price)}
                 </p>
               )}
@@ -158,7 +158,7 @@ export function ProductModal({
                         className={`flex w-full items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left text-sm font-semibold transition-all ${
                           active
                             ? "border-transparent bg-brand-gradient text-white shadow-brand"
-                            : "border-brand-pink/20 bg-white text-[#1f1033] hover:border-brand-violet/40"
+                            : "border-brand-secondary/20 bg-background text-foreground hover:border-brand-primary/40"
                         }`}
                       >
                         <span>{v.label}</span>
@@ -185,7 +185,7 @@ export function ProductModal({
                     <span
                       className={`rounded-full px-2 py-0.5 text-[10px] font-bold normal-case tracking-normal ${
                         group.required
-                          ? "bg-brand-pink/15 text-brand-pink"
+                          ? "bg-brand-secondary/15 text-brand-secondary"
                           : "bg-gray-100 text-gray-400"
                       }`}
                     >
@@ -206,7 +206,7 @@ export function ProductModal({
                           className={`rounded-full border px-3.5 py-2 text-sm font-semibold transition-all ${
                             active
                               ? "border-transparent bg-brand-gradient text-white shadow-brand"
-                              : "border-brand-pink/20 bg-white text-[#1f1033] hover:border-brand-violet/40"
+                              : "border-brand-secondary/20 bg-background text-foreground hover:border-brand-primary/40"
                           } ${disabled ? "opacity-40" : ""}`}
                         >
                           {option}
@@ -240,8 +240,8 @@ export function ProductModal({
                         onClick={() => toggleAddon(addon.id)}
                         className={`flex w-full items-center justify-between gap-3 rounded-2xl border px-4 py-2.5 text-left text-sm font-semibold transition-all ${
                           active
-                            ? "border-brand-violet bg-brand-violet/5 text-brand-violet"
-                            : "border-brand-pink/20 bg-white text-[#1f1033] hover:border-brand-violet/40"
+                            ? "border-brand-primary bg-brand-primary/5 text-brand-primary"
+                            : "border-brand-secondary/20 bg-background text-foreground hover:border-brand-primary/40"
                         }`}
                       >
                         <span className="flex items-center gap-3">
@@ -257,7 +257,7 @@ export function ProductModal({
                           </span>
                           {addon.label}
                         </span>
-                        <span className="text-brand-violet">
+                        <span className="text-brand-primary">
                           + {formatPrice(addon.price)}
                         </span>
                       </button>
@@ -270,9 +270,9 @@ export function ProductModal({
         </div>
 
         {/* Rodapé fixo: quantidade + adicionar */}
-        <div className="border-t border-brand-pink/10 bg-white p-4">
+        <div className="border-t border-brand-secondary/10 bg-background p-4">
           {!canAdd && (
-            <p className="mb-2 text-center text-xs font-semibold text-brand-pink">
+            <p className="mb-2 text-center text-xs font-semibold text-brand-secondary">
               Escolha: {missingGroups.map((g) => g.title).join(", ")}
             </p>
           )}
@@ -281,7 +281,7 @@ export function ProductModal({
               <button
                 onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                 aria-label="Diminuir quantidade"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-pink/10 text-xl font-bold text-brand-violet transition-transform active:scale-90"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-secondary/10 text-xl font-bold text-brand-primary transition-transform active:scale-90"
               >
                 −
               </button>

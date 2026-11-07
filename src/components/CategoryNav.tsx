@@ -10,7 +10,7 @@ export function CategoryNav({
   onSelect: (c: Category) => void;
 }) {
   return (
-    <nav className="sticky top-[68px] z-20 bg-white/90 backdrop-blur-md">
+    <nav className="sticky top-[68px] z-20 bg-background/90 backdrop-blur-md">
       <div className="mx-auto max-w-2xl px-4 py-3">
         <div className="flex gap-2 overflow-x-auto no-scrollbar">
           {categories.map((cat) => {
@@ -22,7 +22,7 @@ export function CategoryNav({
                 className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-all ${
                   isActive
                     ? "bg-brand-gradient text-white shadow-brand"
-                    : "bg-brand-pink/10 text-brand-violet/70 hover:bg-brand-pink/20"
+                    : "bg-brand-secondary/10 text-brand-primary/70 hover:bg-brand-secondary/20"
                 }`}
               >
                 <span className="mr-1">{cat.emoji}</span>

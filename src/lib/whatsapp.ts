@@ -17,7 +17,11 @@ export function buildWhatsappOrderUrl(order: OrderInfo): string {
   const { items, total, address, payment, changeFor } = order;
 
   const lines: string[] = [];
-  lines.push(`*Novo pedido - ${storeConfig.name}* 🦉`);
+  lines.push(
+    `*Novo pedido - ${storeConfig.name}*${
+      storeConfig.emoji ? ` ${storeConfig.emoji}` : ""
+    }`
+  );
   lines.push("");
   lines.push("*Itens:*");
 

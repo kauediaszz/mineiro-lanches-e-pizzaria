@@ -1,0 +1,189 @@
+{
+  "_gerado": "GERADO a partir de conteudo/cardapio.md. Não edite à mão: edite o .md e peça para a IA regenerar (veja o AGENTS.md).",
+  "categories": [
+    { "id": "pizzas", "label": "Pizzas", "emoji": "🍕" },
+    { "id": "lanches", "label": "Lanches", "emoji": "🍔" },
+    { "id": "bebidas", "label": "Bebidas", "emoji": "🥤" },
+    { "id": "sobremesas", "label": "Sobremesas", "emoji": "🍰" }
+  ],
+  "addonSets": {
+    "pizza": [
+      { "label": "Borda de Catupiry", "price": 8 },
+      { "label": "Borda de cheddar", "price": 8 },
+      { "label": "Mussarela extra", "price": 6 },
+      { "label": "Bacon", "price": 5 }
+    ],
+    "lanche": [
+      { "label": "Bacon", "price": 4 },
+      { "label": "Ovo", "price": 3 },
+      { "label": "Queijo extra", "price": 3 }
+    ]
+  },
+  "optionSets": {},
+  "products": [
+    {
+      "id": "pizza-mussarela",
+      "name": "Pizza de Mussarela",
+      "description": "Molho de tomate, mussarela e orégano.",
+      "category": "pizzas",
+      "section": "Tradicionais",
+      "image": "pizza tradicional.jpg",
+      "variants": [
+        { "label": "Média", "price": 38 },
+        { "label": "Grande", "price": 48 }
+      ],
+      "addons": "pizza"
+    },
+    {
+      "id": "pizza-calabresa",
+      "name": "Pizza de Calabresa",
+      "description": "Calabresa fatiada, cebola e mussarela.",
+      "category": "pizzas",
+      "section": "Tradicionais",
+      "image": "pizza tradicional.jpg",
+      "variants": [
+        { "label": "Média", "price": 40 },
+        { "label": "Grande", "price": 52 }
+      ],
+      "addons": "pizza"
+    },
+    {
+      "id": "pizza-portuguesa",
+      "name": "Pizza Portuguesa",
+      "description": "Presunto, ovo, cebola, ervilha e mussarela.",
+      "category": "pizzas",
+      "section": "Tradicionais",
+      "image": "pizza tradicional.jpg",
+      "variants": [
+        { "label": "Média", "price": 44 },
+        { "label": "Grande", "price": 56 }
+      ],
+      "addons": "pizza"
+    },
+    {
+      "id": "pizza-frango-catupiry",
+      "name": "Pizza de Frango com Catupiry",
+      "description": "Frango desfiado, Catupiry e mussarela.",
+      "category": "pizzas",
+      "section": "Especiais",
+      "image": "pizza especial.jpg",
+      "variants": [
+        { "label": "Média", "price": 46 },
+        { "label": "Grande", "price": 58 }
+      ],
+      "addons": "pizza"
+    },
+    {
+      "id": "pizza-quatro-queijos",
+      "name": "Pizza Quatro Queijos",
+      "description": "Mussarela, provolone, gorgonzola e parmesão.",
+      "category": "pizzas",
+      "section": "Especiais",
+      "image": "pizza especial.jpg",
+      "variants": [
+        { "label": "Média", "price": 48 },
+        { "label": "Grande", "price": 60 }
+      ],
+      "addons": "pizza"
+    },
+    {
+      "id": "x-burger",
+      "name": "X-Burger",
+      "description": "Pão, hambúrguer de 150 g, queijo e salada.",
+      "category": "lanches",
+      "emoji": "🍔",
+      "price": 22,
+      "addons": "lanche"
+    },
+    {
+      "id": "x-bacon",
+      "name": "X-Bacon",
+      "description": "Pão, hambúrguer de 150 g, queijo, bacon e salada.",
+      "category": "lanches",
+      "emoji": "🍔",
+      "price": 26,
+      "addons": "lanche"
+    },
+    {
+      "id": "refrigerante-lata",
+      "name": "Refrigerante lata",
+      "description": "350 ml.",
+      "category": "bebidas",
+      "emoji": "🥤",
+      "price": 6,
+      "optionGroups": [
+        {
+          "title": "Sabor",
+          "type": "single",
+          "required": true,
+          "options": ["Cola", "Guaraná", "Laranja"]
+        }
+      ]
+    },
+    {
+      "id": "suco-natural",
+      "name": "Suco natural",
+      "description": "Feito na hora.",
+      "category": "bebidas",
+      "emoji": "🧃",
+      "variants": [
+        { "label": "300 ml", "price": 8 },
+        { "label": "500 ml", "price": 12 }
+      ],
+      "optionGroups": [
+        {
+          "title": "Sabor",
+          "type": "single",
+          "required": true,
+          "options": ["Laranja", "Limão", "Maracujá"]
+        }
+      ]
+    },
+    {
+      "id": "agua-mineral",
+      "name": "Água mineral",
+      "description": "500 ml.",
+      "category": "bebidas",
+      "emoji": "💧",
+      "price": 4,
+      "optionGroups": [
+        {
+          "title": "Tipo",
+          "type": "single",
+          "required": true,
+          "options": ["Sem gás", "Com gás"]
+        }
+      ]
+    },
+    {
+      "id": "brownie-com-sorvete",
+      "name": "Brownie com sorvete",
+      "description": "Brownie quentinho com bola de sorvete.",
+      "category": "sobremesas",
+      "emoji": "🍰",
+      "price": 18,
+      "optionGroups": [
+        {
+          "title": "Sabor do sorvete",
+          "type": "multiple",
+          "required": true,
+          "max": 2,
+          "options": ["Chocolate", "Morango", "Baunilha"]
+        }
+      ]
+    },
+    {
+      "id": "pudim",
+      "name": "Pudim",
+      "description": "Pudim de leite condensado.",
+      "category": "sobremesas",
+      "emoji": "🍮",
+      "price": 10
+    }
+  ],
+  "featured": {
+    "product": "pizza-quatro-queijos",
+    "tagline": "Mussarela, provolone, gorgonzola e parmesão",
+    "image": "destaque.jpg"
+  }
+}

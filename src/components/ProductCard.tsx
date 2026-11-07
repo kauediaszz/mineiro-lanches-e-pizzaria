@@ -33,7 +33,7 @@ export function ProductCard({
 
   return (
     <div
-      className={`group relative flex flex-col overflow-hidden rounded-3xl border border-brand-pink/10 bg-white shadow-sm transition-all duration-300 ${
+      className={`group relative flex flex-col overflow-hidden rounded-3xl border border-brand-secondary/10 bg-background shadow-sm transition-all duration-300 ${
         pulse
           ? "z-10 scale-[1.04] shadow-brand"
           : "hover:scale-[1.02] hover:shadow-brand"
@@ -70,7 +70,7 @@ export function ProductCard({
             {hasSeveralPrices && (
               <p className="text-[10px] font-medium text-gray-400">a partir de</p>
             )}
-            <span className="font-extrabold text-brand-violet">
+            <span className="font-extrabold text-brand-primary">
               {formatPrice(startingPrice(product))}
             </span>
           </div>

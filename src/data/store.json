@@ -1,0 +1,20 @@
+{
+  "_gerado": "GERADO a partir do bloco 'Identidade' de conteudo/tema.md. Não edite à mão: edite o .md e peça para a IA regenerar (veja o AGENTS.md).",
+  "name": "Pizzaria do Zé",
+  "slogan": "Quentinha até a sua porta",
+  "emoji": "🍕",
+  "whatsapp": "5521999990000",
+  "address": "Rua das Flores, 100 - Centro",
+  "instagram": "@pizzariadoze",
+  "hours": {
+    "schedule": [
+      {
+        "days": [2, 3, 4, 5, 6, 0],
+        "label": "Ter a Dom",
+        "open": "18:00",
+        "close": "23:30"
+      }
+    ],
+    "closedNote": "Segunda é folga!"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "_gerado": "GERADO por `npm run images` a partir de conteudo/imagens/. Não edite à mão.",
+  "logo": null,
+  "images": {
+    "destaque": "/menu/destaque.webp",
+    "pizza-especial": "/menu/pizza-especial.webp",
+    "pizza-tradicional": "/menu/pizza-tradicional.webp"
+  }
+}

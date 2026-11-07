@@ -6,7 +6,7 @@ import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/format";
 import { buildWhatsappOrderUrl } from "@/lib/whatsapp";
 import { paymentMethods, PaymentMethod, storeConfig } from "@/data/config";
-import { OwlLogo } from "@/components/OwlLogo";
+import { BrandMark } from "@/components/BrandMark";
 
 export default function PedidoPage() {
   const { items, totalPrice, totalItems, increment, decrement, removeItem } =
@@ -46,14 +46,12 @@ export default function PedidoPage() {
   if (totalItems === 0) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4 px-6 text-center">
-        <div className="h-20 w-20 rounded-3xl bg-brand-gradient-soft flex items-center justify-center">
-          <OwlLogo className="h-10 w-10 text-white" />
-        </div>
-        <h1 className="text-xl font-extrabold text-brand-violet">
+        <BrandMark className="h-20 w-20 text-4xl" />
+        <h1 className="text-xl font-extrabold text-brand-primary">
           Seu pedido está vazio
         </h1>
         <p className="text-sm text-gray-500">
-          Volte ao cardápio e escolha seus lanches.
+          Volte ao cardápio e faça o seu pedido.
         </p>
         <Link
           href="/"
@@ -68,16 +66,16 @@ export default function PedidoPage() {
   return (
     <main className="min-h-screen pb-40">
       {/* Topo */}
-      <header className="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-brand-pink/10">
+      <header className="sticky top-0 z-30 bg-background/90 backdrop-blur-md border-b border-brand-secondary/10">
         <div className="mx-auto max-w-2xl px-4 py-3 flex items-center gap-3">
           <Link
             href="/"
-            className="h-10 w-10 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-violet text-xl active:scale-90 transition-transform"
+            className="h-10 w-10 rounded-full bg-brand-secondary/10 flex items-center justify-center text-brand-primary text-xl active:scale-90 transition-transform"
             aria-label="Voltar"
           >
             ←
           </Link>
-          <h1 className="font-extrabold text-lg text-brand-violet">
+          <h1 className="font-extrabold text-lg text-brand-primary">
             Seu pedido
           </h1>
         </div>
@@ -93,7 +91,7 @@ export default function PedidoPage() {
             {items.map((item) => (
               <div
                 key={item.lineId}
-                className="flex items-center gap-3 rounded-2xl bg-white border border-brand-pink/10 p-3 shadow-sm"
+                className="flex items-center gap-3 rounded-2xl bg-background border border-brand-secondary/10 p-3 shadow-sm"
               >
                 <div className="min-w-0 flex-1">
                   <p className="font-bold text-sm">{item.name}</p>
@@ -110,7 +108,7 @@ export default function PedidoPage() {
                       {detail}
                     </p>
                   ))}
-                  <p className="mt-0.5 text-xs text-brand-violet font-semibold">
+                  <p className="mt-0.5 text-xs text-brand-primary font-semibold">
                     {formatPrice(item.price)}
                   </p>
                 </div>
@@ -118,7 +116,7 @@ export default function PedidoPage() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => decrement(item.lineId)}
-                    className="h-8 w-8 rounded-full bg-brand-pink/10 text-brand-violet text-lg font-bold flex items-center justify-center active:scale-90 transition-transform"
+                    className="h-8 w-8 rounded-full bg-brand-secondary/10 text-brand-primary text-lg font-bold flex items-center justify-center active:scale-90 transition-transform"
                     aria-label="Remover um"
                   >
                     −
@@ -137,7 +135,7 @@ export default function PedidoPage() {
 
                 <button
                   onClick={() => removeItem(item.lineId)}
-                  className="text-gray-300 hover:text-brand-pink text-xl px-1"
+                  className="text-gray-300 hover:text-brand-secondary text-xl px-1"
                   aria-label="Remover item"
                 >
                   ×
@@ -157,7 +155,7 @@ export default function PedidoPage() {
             onChange={(e) => setAddress(e.target.value)}
             rows={3}
             placeholder="Rua, número, bairro, complemento e ponto de referência"
-            className="w-full rounded-2xl border border-brand-pink/20 bg-white p-4 text-sm outline-none focus:border-brand-violet focus:ring-2 focus:ring-brand-violet/20 resize-none"
+            className="w-full rounded-2xl border border-brand-secondary/20 bg-background p-4 text-sm outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 resize-none"
           />
           <p className="mt-1 text-[11px] text-gray-400">
             {storeConfig.deliveryInfo}
@@ -179,7 +177,7 @@ export default function PedidoPage() {
                   className={`rounded-2xl border p-3 text-sm font-semibold transition-all ${
                     isActive
                       ? "border-transparent bg-brand-gradient text-white shadow-brand"
-                      : "border-brand-pink/20 bg-white text-brand-violet/70 hover:border-brand-violet/40"
+                      : "border-brand-secondary/20 bg-background text-brand-primary/70 hover:border-brand-primary/40"
                   }`}
                 >
                   <span className="block text-xl mb-0.5">{method.emoji}</span>
@@ -198,33 +196,33 @@ export default function PedidoPage() {
                 value={changeFor}
                 onChange={(e) => setChangeFor(e.target.value)}
                 placeholder="Ex: R$ 50,00 (deixe vazio se não precisar)"
-                className="mt-1 w-full rounded-2xl border border-brand-pink/20 bg-white p-3 text-sm outline-none focus:border-brand-violet focus:ring-2 focus:ring-brand-violet/20"
+                className="mt-1 w-full rounded-2xl border border-brand-secondary/20 bg-background p-3 text-sm outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20"
               />
             </div>
           )}
         </section>
 
         {/* Total */}
-        <section className="rounded-2xl bg-brand-pink/5 p-4">
+        <section className="rounded-2xl bg-brand-secondary/5 p-4">
           <div className="flex items-center justify-between text-sm text-gray-500">
             <span>Subtotal ({totalItems} itens)</span>
             <span>{formatPrice(totalPrice)}</span>
           </div>
-          <div className="mt-2 flex items-center justify-between font-extrabold text-lg text-brand-violet">
+          <div className="mt-2 flex items-center justify-between font-extrabold text-lg text-brand-primary">
             <span>Total</span>
             <span>{formatPrice(totalPrice)}</span>
           </div>
         </section>
 
         {error && (
-          <p className="text-center text-sm font-semibold text-brand-pink animate-pop-in">
+          <p className="text-center text-sm font-semibold text-brand-secondary animate-pop-in">
             {error}
           </p>
         )}
       </div>
 
       {/* Botao fixo de fazer pedido */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-t from-white via-white to-transparent">
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-t from-background via-background to-transparent">
         <div className="mx-auto max-w-2xl">
           <button
             onClick={handleSubmit}

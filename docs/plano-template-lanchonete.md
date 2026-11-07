@@ -1,6 +1,6 @@
 # Plano: template de site para novas lanchonetes
 
-Status: **plano em discussão, nada implementado ainda.**
+Status: **etapas 1 a 4 implementadas na branch `develop`** (resumo e desvios do plano na seção 14).
 Ponto de partida: o código do site do Madrugadão Lanches (Next.js, export estático, Cloudflare Pages).
 
 > **Enquadramento importante:** o Madrugadão é um projeto, as outras lojas são
@@ -149,7 +149,7 @@ Instagram: @pizzariadoze
 
 ## Cores
 Principal: #c2410c
-Secundária: #f59e0b
+Secundária: #dc2626
 Fundo: #ffffff
 Texto: #1c1917
 
@@ -249,6 +249,8 @@ Levantamento feito no código. **Na base do template** estes pontos ficam neutro
 
 ## 10. Decisões em aberto
 
+> C e F foram resolvidas na implementação (seção 14). G continua em aberto.
+
 **C. Cortar bordas brancas de fotos (ex.: destaque).**
 Manter a regra "arquivo chamado `destaque`" ou permitir marcar no cardápio?
 
@@ -286,3 +288,50 @@ Sugestão: testar na branch agora e migrar para (b) quando o template estiver va
 - Mudar o `tema.md` muda todas as cores e a fonte do site, incluindo transparências e a cor da barra do navegador.
 - A IA avisa corretamente um cardápio com preço faltando e uma foto citada que não existe.
 - O projeto do Madrugadão continua exatamente como está, sem nenhuma alteração.
+
+## 14. Estado da implementação (branch `develop`)
+
+As quatro etapas da seção 12 foram feitas. O guia completo para a IA está no
+`AGENTS.md`, e o resumo para humanos no `README.md` e em `conteudo/LEIA-ME.md`.
+
+### Decisões tomadas na implementação (as que estavam em aberto)
+
+- **C. Corte de bordas brancas:** mantida a regra por nome. Fotos chamadas `destaque`
+  (ou `destaque-algo`) são cortadas automaticamente.
+- **F. Validação além da IA:** foi criado o comando `npm run validar`. A IA continua sendo
+  quem avisa o usuário (relatório final no `AGENTS.md`), mas o script faz as conferências
+  mecânicas de forma determinística (preços, fotos, cores, fonte...).
+- **G. Onde o template vive:** **continua em aberto.** Por enquanto está nesta branch.
+
+### Desvios em relação ao desenho original (e por quê)
+
+- **Dados gerados em JSON, não em TypeScript.** A IA gera `src/data/menu.json`,
+  `store.json` e `theme.json`. JSON é mais difícil de errar do que código, e o validador
+  roda em Node puro, sem depender da versão do Node. O carregamento e a conferência
+  ficam em `src/data/menu.ts` e `src/data/config.ts` (código fixo, não muda de loja).
+- **Manifest de imagens.** `npm run images` também escreve `src/data/images.manifest.json`.
+  É ele que permite escrever o nome da foto livremente no cardápio (sem acento, com
+  maiúscula, com ou sem extensão) e que faz o site "saber" se a loja tem logo.
+- **Fonte em arquivo TypeScript gerado** (`src/theme/font.ts`), porque o `next/font`
+  exige o nome da fonte escrito no código.
+- **Falha cedo.** O build quebra com mensagem clara se o cardápio apontar para categoria,
+  conjunto ou destaque que não existem, ou se o WhatsApp for inválido.
+
+### Como foi verificado
+
+- Os dados reais do Madrugadão (71 produtos, com tamanhos, escolhas e adicionais)
+  foram convertidos para o novo formato como teste. O resultado visual ficou
+  idêntico ao de antes, exceto o ícone da coruja, que virou a inicial da loja.
+- Uma segunda loja fictícia (Burger Lab: outra fonte, fundo não branco, logo com
+  transparência, horário que passa da meia-noite, sem destaque) foi montada numa cópia do
+  projeto. Só os 5 arquivos gerados mudaram em `src/`; nenhum componente foi alterado.
+- O validador foi testado com 13 problemas plantados de propósito. Todos foram apontados.
+- O fluxo de pedido foi testado de ponta a ponta, incluindo a mensagem do WhatsApp.
+
+### Limitações conhecidas
+
+- O template é para **fundo claro**. Fundo escuro exige mudanças de código.
+- As formas de pagamento (Pix, Cartão, Dinheiro) são fixas no código.
+- A conversão do texto em JSON depende da IA seguir o `AGENTS.md`; o validador pega
+  erros de formato e de conteúdo, mas não detecta um produto que a IA esqueceu de incluir
+  (por isso o relatório final pede para comparar as contagens).

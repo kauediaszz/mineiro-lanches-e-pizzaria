@@ -1,5 +1,5 @@
 {
-  "name": "madrugadao-lanches",
+  "name": "site-lanchonete",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "images": "node scripts/optimize-images.mjs"
+    "images": "node scripts/optimize-images.mjs",
+    "validar": "node scripts/validar.mjs"
   },
   "dependencies": {
     "next": "15.5.28",

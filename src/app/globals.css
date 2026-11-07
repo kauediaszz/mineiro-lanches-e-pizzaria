@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Valores padrão (neutros), só como segurança.
+ * As cores reais são aplicadas no <html> pelo layout.tsx, a partir de
+ * src/data/theme.json (gerado do conteudo/tema.md).
+ * Formato "R G B" para o Tailwind aplicar transparência (ex: /20).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #1f1033;
+  --color-primary: 234 88 12;
+  --color-primary-light: 244 154 100;
+  --color-secondary: 245 158 11;
+  --color-secondary-light: 249 195 108;
+  --color-background: 255 255 255;
+  --color-foreground: 28 25 23;
 }
 
 html,
@@ -14,8 +24,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--color-foreground));
+  background: rgb(var(--color-background));
   -webkit-font-smoothing: antialiased;
 }
 

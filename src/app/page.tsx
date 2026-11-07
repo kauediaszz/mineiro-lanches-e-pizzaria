@@ -38,7 +38,7 @@ export default function HomePage() {
       <CategoryNav active={active} onSelect={setActive} />
 
       <section className="mx-auto max-w-2xl px-4 pt-2">
-        <h2 className="mb-3 text-lg font-extrabold text-brand-violet">
+        <h2 className="mb-3 text-lg font-extrabold text-brand-primary">
           {activeLabel}
         </h2>
 

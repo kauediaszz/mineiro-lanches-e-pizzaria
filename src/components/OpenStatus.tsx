@@ -20,6 +20,8 @@ export function OpenStatus() {
 
   // Espaço reservado enquanto carrega, pra o topo não "pular"
   if (!status) return <p className="h-4" aria-hidden="true" />;
+  // Loja sem horário cadastrado
+  if (!status.text) return null;
 
   return (
     <p

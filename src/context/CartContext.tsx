@@ -8,6 +8,8 @@ import {
   useReducer,
   ReactNode,
 } from "react";
+import { storeConfig } from "@/data/config";
+import { slugify } from "@/lib/images";
 
 export interface CartItem {
   /** Identifica a combinação exata (produto + tamanho + escolhas + adicionais) */
@@ -37,8 +39,9 @@ type CartAction =
   | { type: "CLEAR" }
   | { type: "HYDRATE"; items: CartItem[] };
 
-// v2: o formato do carrinho mudou (tamanhos, sabores e adicionais)
-const STORAGE_KEY = "madrugadao-cart-v2";
+// v2: o formato do carrinho mudou (tamanhos, sabores e adicionais).
+// A chave inclui o nome da loja para lojas diferentes não dividirem o carrinho.
+const STORAGE_KEY = `${slugify(storeConfig.name) || "loja"}-cart-v2`;
 
 function reducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
