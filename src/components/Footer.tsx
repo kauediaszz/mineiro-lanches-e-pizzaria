@@ -7,13 +7,13 @@ export function Footer() {
 
   return (
     <footer className="mx-auto mt-10 max-w-2xl px-4">
-      <div className="rounded-3xl bg-brand-secondary/5 p-5 text-sm">
+      <div className="rounded-3xl bg-foreground/5 p-5 text-sm">
         {schedule.length > 0 && (
           <>
-            <h2 className="mb-3 font-extrabold text-brand-primary">
+            <h2 className="mb-3 font-extrabold text-accent">
               Horário de funcionamento
             </h2>
-            <ul className="space-y-1.5 text-gray-600">
+            <ul className="space-y-1.5 text-foreground/75">
               {schedule.map((slot) => (
                 <li key={slot.label} className="flex justify-between gap-3">
                   <span className="font-semibold">{slot.label}</span>
@@ -23,7 +23,7 @@ export function Footer() {
                 </li>
               ))}
               {closedNote && (
-                <li className="font-semibold text-brand-secondary">
+                <li className="font-semibold text-accent">
                   {closedNote}
                 </li>
               )}
@@ -32,7 +32,7 @@ export function Footer() {
         )}
 
         {address && (
-          <p className="mt-4 flex gap-2 text-gray-600">
+          <p className="mt-4 flex gap-2 text-foreground/75">
             <span aria-hidden="true">📍</span>
             <span>{address}</span>
           </p>
@@ -43,7 +43,7 @@ export function Footer() {
             href={`https://wa.me/${storeConfig.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-bold text-brand-primary"
+            className="inline-flex items-center gap-2 font-bold text-accent"
           >
             <span aria-hidden="true">📞</span>
             {storeConfig.phoneDisplay}
@@ -53,7 +53,7 @@ export function Footer() {
               href={instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-bold text-brand-primary"
+              className="inline-flex items-center gap-2 font-bold text-accent"
             >
               <span aria-hidden="true">📷</span>
               Instagram

@@ -38,15 +38,16 @@ export default function HomePage() {
       <CategoryNav active={active} onSelect={setActive} />
 
       <section className="mx-auto max-w-2xl px-4 pt-2">
-        <h2 className="mb-3 text-lg font-extrabold text-brand-primary">
+        <h2 className="text-lg font-extrabold text-foreground">
           {activeLabel}
         </h2>
+        <div className="mb-4 mt-1 h-0.5 w-12 rounded-full bg-leaf" aria-hidden="true" />
 
         <div className="space-y-6">
           {groups.map(([section, items]) => (
             <div key={section || "geral"}>
               {section && (
-                <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-accent">
                   {section}
                 </h3>
               )}

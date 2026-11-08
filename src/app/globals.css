@@ -15,6 +15,9 @@
   --color-secondary-light: 249 195 108;
   --color-background: 255 255 255;
   --color-foreground: 28 25 23;
+  --color-surface: 179 175 175;
+  --color-accent: 246 231 180;
+  --color-leaf: 47 122 58;
 }
 
 html,

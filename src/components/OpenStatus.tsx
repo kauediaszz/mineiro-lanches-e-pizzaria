@@ -26,12 +26,12 @@ export function OpenStatus() {
   return (
     <p
       className={`flex items-center justify-end gap-1 truncate text-[11px] font-semibold leading-4 ${
-        status.isOpen ? "text-green-600" : "text-gray-500"
+        status.isOpen ? "text-green-400" : "text-foreground/70"
       }`}
     >
       <span
         className={`h-2 w-2 shrink-0 rounded-full ${
-          status.isOpen ? "animate-pulse bg-green-500" : "bg-gray-300"
+          status.isOpen ? "animate-pulse bg-green-500" : "bg-foreground/30"
         }`}
         aria-hidden="true"
       />

@@ -47,10 +47,10 @@ export default function PedidoPage() {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center gap-4 px-6 text-center">
         <BrandMark className="h-20 w-20 text-4xl" />
-        <h1 className="text-xl font-extrabold text-brand-primary">
+        <h1 className="text-xl font-extrabold text-accent">
           Seu pedido está vazio
         </h1>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-foreground/70">
           Volte ao cardápio e faça o seu pedido.
         </p>
         <Link
@@ -66,16 +66,16 @@ export default function PedidoPage() {
   return (
     <main className="min-h-screen pb-40">
       {/* Topo */}
-      <header className="sticky top-0 z-30 bg-background/90 backdrop-blur-md border-b border-brand-secondary/10">
+      <header className="sticky top-0 z-30 bg-background/90 backdrop-blur-md border-b border-accent/10">
         <div className="mx-auto max-w-2xl px-4 py-3 flex items-center gap-3">
           <Link
             href="/"
-            className="h-10 w-10 rounded-full bg-brand-secondary/10 flex items-center justify-center text-brand-primary text-xl active:scale-90 transition-transform"
+            className="h-10 w-10 rounded-full bg-foreground/10 flex items-center justify-center text-accent text-xl active:scale-90 transition-transform"
             aria-label="Voltar"
           >
             ←
           </Link>
-          <h1 className="font-extrabold text-lg text-brand-primary">
+          <h1 className="font-extrabold text-lg text-accent">
             Seu pedido
           </h1>
         </div>
@@ -84,31 +84,31 @@ export default function PedidoPage() {
       <div className="mx-auto max-w-2xl px-4 pt-4 space-y-6">
         {/* Itens */}
         <section>
-          <h2 className="mb-2 text-sm font-bold text-gray-400 uppercase tracking-wide">
+          <h2 className="mb-2 text-sm font-bold text-foreground/60 uppercase tracking-wide">
             Itens
           </h2>
           <div className="space-y-2">
             {items.map((item) => (
               <div
                 key={item.lineId}
-                className="flex items-center gap-3 rounded-2xl bg-background border border-brand-secondary/10 p-3 shadow-sm"
+                className="flex items-center gap-3 rounded-2xl bg-surface border border-accent/10 p-3 shadow-sm"
               >
                 <div className="min-w-0 flex-1">
                   <p className="font-bold text-sm">{item.name}</p>
                   {item.variantLabel && (
-                    <p className="text-xs font-semibold text-gray-500">
+                    <p className="text-xs font-semibold text-foreground/70">
                       {item.variantLabel}
                     </p>
                   )}
                   {item.details.map((detail) => (
                     <p
                       key={detail}
-                      className="text-[11px] leading-snug text-gray-400"
+                      className="text-[11px] leading-snug text-foreground/60"
                     >
                       {detail}
                     </p>
                   ))}
-                  <p className="mt-0.5 text-xs text-brand-primary font-semibold">
+                  <p className="mt-0.5 text-xs text-accent font-semibold">
                     {formatPrice(item.price)}
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default function PedidoPage() {
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => decrement(item.lineId)}
-                    className="h-8 w-8 rounded-full bg-brand-secondary/10 text-brand-primary text-lg font-bold flex items-center justify-center active:scale-90 transition-transform"
+                    className="h-8 w-8 rounded-full bg-foreground/10 text-accent text-lg font-bold flex items-center justify-center active:scale-90 transition-transform"
                     aria-label="Remover um"
                   >
                     −
@@ -135,7 +135,7 @@ export default function PedidoPage() {
 
                 <button
                   onClick={() => removeItem(item.lineId)}
-                  className="text-gray-300 hover:text-brand-secondary text-xl px-1"
+                  className="text-foreground/40 hover:text-accent text-xl px-1"
                   aria-label="Remover item"
                 >
                   ×
@@ -147,7 +147,7 @@ export default function PedidoPage() {
 
         {/* Endereco */}
         <section>
-          <h2 className="mb-2 text-sm font-bold text-gray-400 uppercase tracking-wide">
+          <h2 className="mb-2 text-sm font-bold text-foreground/60 uppercase tracking-wide">
             Endereço de entrega
           </h2>
           <textarea
@@ -155,16 +155,16 @@ export default function PedidoPage() {
             onChange={(e) => setAddress(e.target.value)}
             rows={3}
             placeholder="Rua, número, bairro, complemento e ponto de referência"
-            className="w-full rounded-2xl border border-brand-secondary/20 bg-background p-4 text-sm outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 resize-none"
+            className="w-full rounded-2xl border border-accent/20 bg-surface p-4 text-sm outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 resize-none"
           />
-          <p className="mt-1 text-[11px] text-gray-400">
+          <p className="mt-1 text-[11px] text-foreground/60">
             {storeConfig.deliveryInfo}
           </p>
         </section>
 
         {/* Pagamento */}
         <section>
-          <h2 className="mb-2 text-sm font-bold text-gray-400 uppercase tracking-wide">
+          <h2 className="mb-2 text-sm font-bold text-foreground/60 uppercase tracking-wide">
             Forma de pagamento
           </h2>
           <div className="grid grid-cols-3 gap-2">
@@ -177,7 +177,7 @@ export default function PedidoPage() {
                   className={`rounded-2xl border p-3 text-sm font-semibold transition-all ${
                     isActive
                       ? "border-transparent bg-brand-gradient text-white shadow-brand"
-                      : "border-brand-secondary/20 bg-background text-brand-primary/70 hover:border-brand-primary/40"
+                      : "border-accent/20 bg-surface text-accent/70 hover:border-accent/40"
                   }`}
                 >
                   <span className="block text-xl mb-0.5">{method.emoji}</span>
@@ -189,33 +189,33 @@ export default function PedidoPage() {
 
           {payment === "dinheiro" && (
             <div className="mt-3 animate-pop-in">
-              <label className="text-xs font-semibold text-gray-500">
+              <label className="text-xs font-semibold text-foreground/70">
                 Precisa de troco? Troco para:
               </label>
               <input
                 value={changeFor}
                 onChange={(e) => setChangeFor(e.target.value)}
                 placeholder="Ex: R$ 50,00 (deixe vazio se não precisar)"
-                className="mt-1 w-full rounded-2xl border border-brand-secondary/20 bg-background p-3 text-sm outline-none focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20"
+                className="mt-1 w-full rounded-2xl border border-accent/20 bg-surface p-3 text-sm outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
               />
             </div>
           )}
         </section>
 
         {/* Total */}
-        <section className="rounded-2xl bg-brand-secondary/5 p-4">
-          <div className="flex items-center justify-between text-sm text-gray-500">
+        <section className="rounded-2xl bg-foreground/5 p-4">
+          <div className="flex items-center justify-between text-sm text-foreground/70">
             <span>Subtotal ({totalItems} itens)</span>
             <span>{formatPrice(totalPrice)}</span>
           </div>
-          <div className="mt-2 flex items-center justify-between font-extrabold text-lg text-brand-primary">
+          <div className="mt-2 flex items-center justify-between font-extrabold text-lg text-accent">
             <span>Total</span>
             <span>{formatPrice(totalPrice)}</span>
           </div>
         </section>
 
         {error && (
-          <p className="text-center text-sm font-semibold text-brand-secondary animate-pop-in">
+          <p className="text-center text-sm font-semibold text-accent animate-pop-in">
             {error}
           </p>
         )}

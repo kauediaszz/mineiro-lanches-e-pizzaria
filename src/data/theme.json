@@ -1,9 +1,11 @@
 {
   "_gerado": "GERADO a partir do bloco 'Cores' de conteudo/tema.md. Não edite à mão: edite o .md e peça para a IA regenerar (veja o AGENTS.md).",
   "colors": {
-    "primary": "#c2410c",
-    "secondary": "#dc2626",
-    "background": "#ffffff",
-    "foreground": "#1c1917"
+    "primary": "#dc2626",
+    "secondary": "#b91c1c",
+    "background": "#4a0a14",
+    "foreground": "#ffffff",
+    "accent": "#f6e7b4",
+    "leaf": "#2f7a3a"
   }
 }

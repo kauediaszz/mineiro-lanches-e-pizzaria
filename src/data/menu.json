@@ -1,189 +1,956 @@
 {
-  "_gerado": "GERADO a partir de conteudo/cardapio.md. Não edite à mão: edite o .md e peça para a IA regenerar (veja o AGENTS.md).",
+  "_gerado": "GERADO a partir de conteudo/cardapio.md. NÃ£o edite Ã  mÃ£o: edite o .md e peÃ§a para a IA regenerar (veja o AGENTS.md).",
   "categories": [
-    { "id": "pizzas", "label": "Pizzas", "emoji": "🍕" },
-    { "id": "lanches", "label": "Lanches", "emoji": "🍔" },
-    { "id": "bebidas", "label": "Bebidas", "emoji": "🥤" },
-    { "id": "sobremesas", "label": "Sobremesas", "emoji": "🍰" }
+    {
+      "id": "pizzas",
+      "label": "Pizzas",
+      "emoji": "🍕"
+    },
+    {
+      "id": "lanches",
+      "label": "Lanches",
+      "emoji": "🍔"
+    },
+    {
+      "id": "batatas",
+      "label": "Batatas",
+      "emoji": "🍟"
+    },
+    {
+      "id": "pasteis",
+      "label": "Pastéis",
+      "emoji": "🥟"
+    },
+    {
+      "id": "bebidas",
+      "label": "Bebidas",
+      "emoji": "🥤"
+    }
   ],
-  "addonSets": {
-    "pizza": [
-      { "label": "Borda de Catupiry", "price": 8 },
-      { "label": "Borda de cheddar", "price": 8 },
-      { "label": "Mussarela extra", "price": 6 },
-      { "label": "Bacon", "price": 5 }
-    ],
-    "lanche": [
-      { "label": "Bacon", "price": 4 },
-      { "label": "Ovo", "price": 3 },
-      { "label": "Queijo extra", "price": 3 }
-    ]
-  },
+  "addonSets": {},
   "optionSets": {},
   "products": [
     {
-      "id": "pizza-mussarela",
+      "id": "pizza-de-mussarela",
       "name": "Pizza de Mussarela",
-      "description": "Molho de tomate, mussarela e orégano.",
       "category": "pizzas",
-      "section": "Tradicionais",
-      "image": "pizza tradicional.jpg",
+      "section": "Salgadas",
       "variants": [
-        { "label": "Média", "price": 38 },
-        { "label": "Grande", "price": 48 }
+        {
+          "label": "P (25 cm)",
+          "price": 40
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 42
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 50
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 65
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 73
+        }
       ],
-      "addons": "pizza"
+      "description": "Molho, mussarela e orégano. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
     },
     {
-      "id": "pizza-calabresa",
+      "id": "pizza-de-calabresa",
       "name": "Pizza de Calabresa",
-      "description": "Calabresa fatiada, cebola e mussarela.",
       "category": "pizzas",
-      "section": "Tradicionais",
-      "image": "pizza tradicional.jpg",
+      "section": "Salgadas",
       "variants": [
-        { "label": "Média", "price": 40 },
-        { "label": "Grande", "price": 52 }
+        {
+          "label": "P (25 cm)",
+          "price": 43
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 50
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 58
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 74
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 82
+        }
       ],
-      "addons": "pizza"
+      "description": "Molho, mussarela e calabresa. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-de-presunto",
+      "name": "Pizza de Presunto",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 41
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 48
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 54
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 71
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 76
+        }
+      ],
+      "description": "Molho, mussarela e presunto. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-de-bacon",
+      "name": "Pizza de Bacon",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 42
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 49
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 56
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 72
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 80
+        }
+      ],
+      "description": "Molho, mussarela e bacon. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-xuxa",
+      "name": "Pizza Xuxa",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 41
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 49
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 55
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 70
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 80
+        }
+      ],
+      "description": "Molho, mussarela e catupiry. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-marguerita",
+      "name": "Pizza Marguerita",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 42
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 47
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 52
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 68
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 77
+        }
+      ],
+      "description": "Molho, mussarela, tomates e manjericão. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-mista",
+      "name": "Pizza Mista",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 43
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 51
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 60
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 74
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 84
+        }
+      ],
+      "description": "Molho, mussarela, calabresa, presunto e bacon. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-4-queijos",
+      "name": "Pizza 4 Queijos",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 45
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 53
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 62
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 80
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 88
+        }
+      ],
+      "description": "Molho, mussarela, queijo prato, queijo provolone e catupiry. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-mineira",
+      "name": "Pizza Mineira",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 47
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 58
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 67
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 83
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 96
+        }
+      ],
+      "description": "Molho, mussarela, calabresa, bacon, presunto, frango e catupiry. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-de-frango-com-catupiry",
+      "name": "Pizza de Frango com Catupiry",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 46
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 54
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 63
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 79
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 87
+        }
+      ],
+      "description": "Molho, mussarela, frango e catupiry. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
     },
     {
       "id": "pizza-portuguesa",
       "name": "Pizza Portuguesa",
-      "description": "Presunto, ovo, cebola, ervilha e mussarela.",
       "category": "pizzas",
-      "section": "Tradicionais",
-      "image": "pizza tradicional.jpg",
+      "section": "Salgadas",
       "variants": [
-        { "label": "Média", "price": 44 },
-        { "label": "Grande", "price": 56 }
+        {
+          "label": "P (25 cm)",
+          "price": 47
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 55
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 64
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 81
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 87
+        }
       ],
-      "addons": "pizza"
+      "description": "Molho, mussarela, calabresa, presunto, milho, ervilha, ovo e azeitonas. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
     },
     {
-      "id": "pizza-frango-catupiry",
-      "name": "Pizza de Frango com Catupiry",
-      "description": "Frango desfiado, Catupiry e mussarela.",
+      "id": "pizza-tropeira",
+      "name": "Pizza Tropeira",
       "category": "pizzas",
-      "section": "Especiais",
-      "image": "pizza especial.jpg",
+      "section": "Salgadas",
       "variants": [
-        { "label": "Média", "price": 46 },
-        { "label": "Grande", "price": 58 }
+        {
+          "label": "P (25 cm)",
+          "price": 48
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 60
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 73
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 86
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 96
+        }
       ],
-      "addons": "pizza"
+      "description": "Molho, mussarela, carne seca e catupiry. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
     },
     {
-      "id": "pizza-quatro-queijos",
-      "name": "Pizza Quatro Queijos",
-      "description": "Mussarela, provolone, gorgonzola e parmesão.",
+      "id": "pizza-pirauba",
+      "name": "Pizza Piraúba",
       "category": "pizzas",
-      "section": "Especiais",
-      "image": "pizza especial.jpg",
+      "section": "Salgadas",
       "variants": [
-        { "label": "Média", "price": 48 },
-        { "label": "Grande", "price": 60 }
+        {
+          "label": "P (25 cm)",
+          "price": 46
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 51
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 55
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 77
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 88
+        }
       ],
-      "addons": "pizza"
+      "description": "Molho, mussarela e sardinha. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
     },
     {
-      "id": "x-burger",
-      "name": "X-Burger",
-      "description": "Pão, hambúrguer de 150 g, queijo e salada.",
+      "id": "pizza-de-palmito",
+      "name": "Pizza de Palmito",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 42
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 51
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 63
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 77
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 85
+        }
+      ],
+      "description": "Molho, mussarela e palmito. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-de-palmito-com-frango",
+      "name": "Pizza de Palmito com Frango",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 45
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 52
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 63
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 81
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 83
+        }
+      ],
+      "description": "Molho, mussarela, palmito e frango. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-de-alho",
+      "name": "Pizza de Alho",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 41
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 47
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 52
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 77
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 85
+        }
+      ],
+      "description": "Molho, mussarela e alho. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-de-atum",
+      "name": "Pizza de Atum",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 42
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 54
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 63
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 83
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 89
+        }
+      ],
+      "description": "Molho, mussarela e atum. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-de-champignon-com-presunto",
+      "name": "Pizza de Champignon com Presunto",
+      "category": "pizzas",
+      "section": "Salgadas",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 43
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 51
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 63
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 76
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 88
+        }
+      ],
+      "description": "Molho, mussarela, champignon e presunto. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-gosto-mineiro",
+      "name": "Pizza Gosto Mineiro",
+      "category": "pizzas",
+      "section": "Doces",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 42
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 48
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 63
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 77
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 85
+        }
+      ],
+      "description": "Mussarela, goiabada, banana, açúcar e canela. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-banana-nevada",
+      "name": "Pizza Banana Nevada",
+      "category": "pizzas",
+      "section": "Doces",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 48
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 57
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 66
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 83
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 92
+        }
+      ],
+      "description": "Mussarela, banana e chocolate branco. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-1.png"
+    },
+    {
+      "id": "pizza-de-chocolate",
+      "name": "Pizza de Chocolate",
+      "category": "pizzas",
+      "section": "Doces",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 48
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 57
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 66
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 83
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 92
+        }
+      ],
+      "description": "Mussarela, chocolate e confete. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "pizza-de-banana",
+      "name": "Pizza de Banana",
+      "category": "pizzas",
+      "section": "Doces",
+      "variants": [
+        {
+          "label": "P (25 cm)",
+          "price": 42
+        },
+        {
+          "label": "M (30 cm)",
+          "price": 48
+        },
+        {
+          "label": "F (35 cm)",
+          "price": 63
+        },
+        {
+          "label": "G (40 cm)",
+          "price": 77
+        },
+        {
+          "label": "GG (45 cm)",
+          "price": 86
+        }
+      ],
+      "description": "Mussarela, banana, açúcar e canela. Tamanhos G e GG acompanham refrigerante.",
+      "emoji": "ðŸ•",
+      "image": "pizza-2.png"
+    },
+    {
+      "id": "hamburguer",
+      "name": "Hambúrguer",
       "category": "lanches",
-      "emoji": "🍔",
-      "price": 22,
-      "addons": "lanche"
+      "price": 10.5,
+      "description": "Pão, carne e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-burguer",
+      "name": "X-Burguer",
+      "category": "lanches",
+      "price": 12,
+      "description": "Pão, carne, queijo e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-egg",
+      "name": "X-Egg",
+      "category": "lanches",
+      "price": 13,
+      "description": "Pão, carne, queijo, ovo e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-calabresa",
+      "name": "X-Calabresa",
+      "category": "lanches",
+      "price": 14,
+      "description": "Pão, carne, queijo, calabresa e salada.",
+      "emoji": "ðŸ”"
     },
     {
       "id": "x-bacon",
       "name": "X-Bacon",
-      "description": "Pão, hambúrguer de 150 g, queijo, bacon e salada.",
       "category": "lanches",
-      "emoji": "🍔",
-      "price": 26,
-      "addons": "lanche"
+      "price": 14,
+      "description": "Pão, carne, queijo, bacon e salada.",
+      "emoji": "ðŸ”"
     },
     {
-      "id": "refrigerante-lata",
-      "name": "Refrigerante lata",
-      "description": "350 ml.",
-      "category": "bebidas",
-      "emoji": "🥤",
-      "price": 6,
-      "optionGroups": [
-        {
-          "title": "Sabor",
-          "type": "single",
-          "required": true,
-          "options": ["Cola", "Guaraná", "Laranja"]
-        }
-      ]
+      "id": "x-egg-calabresa",
+      "name": "X-Egg Calabresa",
+      "category": "lanches",
+      "price": 15,
+      "description": "Pão, carne, queijo, ovo, calabresa e salada.",
+      "emoji": "ðŸ”"
     },
     {
-      "id": "suco-natural",
-      "name": "Suco natural",
-      "description": "Feito na hora.",
-      "category": "bebidas",
-      "emoji": "🧃",
+      "id": "x-egg-bacon",
+      "name": "X-Egg Bacon",
+      "category": "lanches",
+      "price": 15,
+      "description": "Pão, carne, queijo, ovo, bacon e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-2-carnes",
+      "name": "X-2 Carnes",
+      "category": "lanches",
+      "price": 15,
+      "description": "Pão, 2 carnes, 2 queijos e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-mineiro",
+      "name": "X-Mineiro",
+      "category": "lanches",
+      "price": 23,
+      "description": "Pão, 2 carnes, muito queijo, muito bacon, muita calabresa, ovo e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-tudo",
+      "name": "X-Tudo",
+      "category": "lanches",
+      "price": 16,
+      "description": "Pão, carne, queijo, calabresa, bacon, ovo e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "trio-mineiro",
+      "name": "Trio Mineiro",
+      "category": "lanches",
+      "price": 23,
+      "description": "Pão, 2 carnes, queijo, batata prea e refri lata.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-picanha",
+      "name": "X-Picanha",
+      "category": "lanches",
+      "price": 17,
+      "description": "Pão, carne de picanha, queijo e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "x-picanha-duplo",
+      "name": "X-Picanha Duplo",
+      "category": "lanches",
+      "price": 21,
+      "description": "Pão, 2 carnes de picanha, queijo e salada.",
+      "emoji": "ðŸ”"
+    },
+    {
+      "id": "batata",
+      "name": "Batata",
+      "category": "batatas",
       "variants": [
-        { "label": "300 ml", "price": 8 },
-        { "label": "500 ml", "price": 12 }
-      ],
-      "optionGroups": [
         {
-          "title": "Sabor",
-          "type": "single",
-          "required": true,
-          "options": ["Laranja", "Limão", "Maracujá"]
+          "label": "Pequena",
+          "price": 10
+        },
+        {
+          "label": "Média",
+          "price": 15
+        },
+        {
+          "label": "Grande",
+          "price": 27
         }
-      ]
+      ],
+      "emoji": "ðŸŸ"
     },
     {
-      "id": "agua-mineral",
-      "name": "Água mineral",
-      "description": "500 ml.",
+      "id": "batata-do-mineiro",
+      "name": "Batata do Mineiro",
+      "category": "batatas",
+      "price": 45,
+      "description": "Batata grande com calabresa, carne seca, bacon, catupiry e cheddar.",
+      "emoji": "ðŸŸ"
+    },
+    {
+      "id": "monte-seu-trio",
+      "name": "Monte seu Trio",
+      "category": "batatas",
+      "price": 12,
+      "description": "Batata pequena + refri lata.",
+      "emoji": "ðŸŸ"
+    },
+    {
+      "id": "pastel",
+      "name": "Pastel",
+      "category": "pasteis",
+      "price": 12,
+      "description": "Todos os sabores com o mesmo preço.",
+      "emoji": "ðŸ¥Ÿ",
+      "image": "pastel.jpg"
+    },
+    {
+      "id": "del-valle",
+      "name": "Del Valle",
       "category": "bebidas",
-      "emoji": "💧",
-      "price": 4,
+      "price": 5,
+      "description": "290 ml.",
+      "emoji": "🥤",
+      "image": "del-valle.jpeg"
+    },
+    {
+      "id": "coca-cola-310",
+      "name": "Coca-Cola 310 ml",
+      "category": "bebidas",
+      "price": 6,
+      "description": "Lata 310 ml.",
+      "emoji": "🥤",
       "optionGroups": [
         {
           "title": "Tipo",
           "type": "single",
           "required": true,
-          "options": ["Sem gás", "Com gás"]
+          "options": [
+            "Comum",
+            "Zero"
+          ]
         }
-      ]
+      ],
+      "image": "coca-cola-latinha.jpeg"
     },
     {
-      "id": "brownie-com-sorvete",
-      "name": "Brownie com sorvete",
-      "description": "Brownie quentinho com bola de sorvete.",
-      "category": "sobremesas",
-      "emoji": "🍰",
-      "price": 18,
+      "id": "agua-tonica",
+      "name": "Água Tônica",
+      "category": "bebidas",
+      "price": 6,
+      "description": "350 ml.",
+      "emoji": "🥤",
+      "image": "tonica.jpeg"
+    },
+    {
+      "id": "pepsi",
+      "name": "Pepsi",
+      "category": "bebidas",
+      "price": 9,
+      "description": "1,5 L.",
+      "emoji": "🥤",
+      "image": "pepsi.jpeg"
+    },
+    {
+      "id": "coca-cola-2l",
+      "name": "Coca-Cola 2 L",
+      "category": "bebidas",
+      "price": 14,
+      "description": "2 litros.",
+      "emoji": "🥤",
+      "image": "coca-cola-2l.jpeg"
+    },
+    {
+      "id": "sukita-2l",
+      "name": "Sukita 2 L",
+      "category": "bebidas",
+      "price": 10,
+      "description": "2 litros.",
+      "emoji": "🥤",
       "optionGroups": [
         {
-          "title": "Sabor do sorvete",
-          "type": "multiple",
+          "title": "Sabor",
+          "type": "single",
           "required": true,
-          "max": 2,
-          "options": ["Chocolate", "Morango", "Baunilha"]
+          "options": [
+            "Laranja",
+            "Uva",
+            "Kuat"
+          ]
         }
-      ]
+      ],
+      "image": "sukita-e-kuat.jpeg"
     },
     {
-      "id": "pudim",
-      "name": "Pudim",
-      "description": "Pudim de leite condensado.",
-      "category": "sobremesas",
-      "emoji": "🍮",
-      "price": 10
+      "id": "guaracamp",
+      "name": "Guaracamp",
+      "category": "bebidas",
+      "price": 4,
+      "description": "285 ml.",
+      "emoji": "🥤",
+      "image": "guaracamp.jpeg"
     }
   ],
   "featured": {
-    "product": "pizza-quatro-queijos",
-    "tagline": "Mussarela, provolone, gorgonzola e parmesão",
-    "image": "destaque.jpg"
+    "product": "pizza-mineira",
+    "tagline": "Mussarela, calabresa, bacon, presunto, frango e catupiry",
+    "image": "destaque.png"
   }
 }

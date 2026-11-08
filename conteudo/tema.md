@@ -1,22 +1,20 @@
-# Tema - Pizzaria do Zé
-
-> LOJA DE EXEMPLO. Substitua pelos dados da loja nova
-> (veja o AGENTS.md na raiz do projeto).
+# Tema - Mineiro Lanche e Pizzaria
 
 ## Identidade
-Nome: Pizzaria do Zé
-Slogan: Quentinha até a sua porta
+Nome: Mineiro Lanche e Pizzaria
+Slogan: Sabor que une família e tradição
 Emoji: 🍕
-WhatsApp: (21) 99999-0000
-Horário: Terça a domingo, das 18h às 23h30. Segunda é folga.
-Endereço: Rua das Flores, 100 - Centro
-Instagram: @pizzariadoze
+WhatsApp: (21) 99025-1700
+Endereço: Rua Leonardo da Vinci, 47 - Senador Camará
+Entrega: Taxa de entrega R$ 5,00
 
 ## Cores
-Principal: #c2410c
-Secundária: #dc2626
-Fundo: #ffffff
-Texto: #1c1917
+Principal: #dc2626
+Secundária: #b91c1c
+Fundo: #4a0a14
+Texto: #ffffff
+Destaque: #f6e7b4
+Detalhe: #2f7a3a
 
 ## Fonte
 Nunito

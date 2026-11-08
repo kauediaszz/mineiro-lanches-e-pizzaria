@@ -1,9 +1,17 @@
 {
   "_gerado": "GERADO por `npm run images` a partir de conteudo/imagens/. Não edite à mão.",
-  "logo": null,
+  "logo": "/brand/logo.webp",
   "images": {
+    "coca-cola-2l": "/menu/coca-cola-2l.webp",
+    "coca-cola-latinha": "/menu/coca-cola-latinha.webp",
+    "del-valle": "/menu/del-valle.webp",
     "destaque": "/menu/destaque.webp",
-    "pizza-especial": "/menu/pizza-especial.webp",
-    "pizza-tradicional": "/menu/pizza-tradicional.webp"
+    "guaracamp": "/menu/guaracamp.webp",
+    "pastel": "/menu/pastel.webp",
+    "pepsi": "/menu/pepsi.webp",
+    "pizza-1": "/menu/pizza-1.webp",
+    "pizza-2": "/menu/pizza-2.webp",
+    "sukita-e-kuat": "/menu/sukita-e-kuat.webp",
+    "tonica": "/menu/tonica.webp"
   }
 }

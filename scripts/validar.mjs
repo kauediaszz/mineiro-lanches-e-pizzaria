@@ -157,8 +157,7 @@ function checkTheme(theme) {
   };
   check("texto branco sobre a cor principal", white, primary, 3, "Botões e etiquetas ficam difíceis de ler. Escolha uma cor mais escura.");
   check("texto branco sobre a cor secundária", white, secondary, 3, "O degradê dos botões termina nessa cor. Escolha uma mais escura.");
-  check("cor principal sobre o fundo", primary, background, 3, "Preços e títulos usam a cor principal como texto.");
-  check("cor secundária sobre o fundo", secondary, background, 3, "Avisos e destaques usam a cor secundária como texto.");
+  check("cor de destaque sobre o fundo", parseHex(colors.accent ?? "#f6e7b4"), background, 3, "Preços e títulos usam a cor de destaque como texto.");
   check("texto sobre o fundo", foreground, background, 4.5, "O texto do site fica difícil de ler.");
 }
 

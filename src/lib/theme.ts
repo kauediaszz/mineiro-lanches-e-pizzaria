@@ -11,6 +11,9 @@ export const DEFAULT_COLORS = {
   secondary: "#f59e0b",
   background: "#ffffff",
   foreground: "#1c1917",
+  // Opcionais no theme.json: destaque (preços/títulos, creme) e detalhe (verde)
+  accent: "#f6e7b4",
+  leaf: "#2f7a3a",
 };
 
 type ColorName = keyof typeof DEFAULT_COLORS;
@@ -32,6 +35,11 @@ export function parseHex(hex: unknown): [number, number, number] | null {
     parseInt(value.slice(2, 4), 16),
     parseInt(value.slice(4, 6), 16),
   ];
+}
+
+/** Mistura a cor com preto (0 = cor original, 1 = preto). */
+function shade(rgb: [number, number, number], amount: number) {
+  return rgb.map((c) => Math.round(c * (1 - amount))) as [number, number, number];
 }
 
 const toChannels = (rgb: [number, number, number]) => rgb.join(" ");
@@ -59,12 +67,14 @@ const primary = pick("primary");
 const secondary = pick("secondary");
 const background = pick("background");
 const foreground = pick("foreground");
+const accent = pick("accent");
+const leaf = pick("leaf");
 
 const toHex = (rgb: [number, number, number]) =>
   "#" + rgb.map((c) => c.toString(16).padStart(2, "0")).join("");
 
-/** Cor principal em hex (usada na barra do navegador do celular) */
-export const themeColorHex = toHex(primary);
+/** Cor de fundo em hex (usada na barra do navegador do celular) */
+export const themeColorHex = toHex(background);
 
 /**
  * Variáveis CSS aplicadas no <html> (ver layout.tsx).
@@ -77,4 +87,7 @@ export const themeStyle = {
   "--color-secondary-light": toChannels(tint(secondary, 0.45)),
   "--color-background": toChannels(background),
   "--color-foreground": toChannels(foreground),
+  "--color-surface": toChannels(shade(background, 0.3)),
+  "--color-accent": toChannels(accent),
+  "--color-leaf": toChannels(leaf),
 } as CSSProperties;

@@ -19,6 +19,9 @@ const config: Config = {
       colors: {
         background: color("background"),
         foreground: color("foreground"),
+        surface: color("surface"),
+        accent: color("accent"),
+        leaf: color("leaf"),
         brand: {
           primary: color("primary"),
           "primary-light": color("primary-light"),

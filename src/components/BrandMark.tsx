@@ -14,7 +14,7 @@ export function BrandMark({ className = "h-11 w-11" }: { className?: string }) {
       <img
         src={brandLogo}
         alt=""
-        className={`${className} shrink-0 rounded-2xl border border-brand-secondary/20 bg-background object-contain p-1 shadow-brand`}
+        className={`${className} shrink-0 rounded-2xl border border-accent/20 bg-surface object-contain p-1 shadow-brand`}
       />
     );
   }

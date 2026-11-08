@@ -1,49 +1,107 @@
-# Cardápio - Pizzaria do Zé
-
-> LOJA DE EXEMPLO. Este arquivo mostra como escrever o cardápio de uma loja.
-> Para criar uma loja nova, substitua este conteúdo pelo cardápio dela
-> (veja o AGENTS.md na raiz do projeto).
+# Cardápio - Mineiro Lanche e Pizzaria
 
 ## 🍕 Pizzas
 
-Adicionais: Borda de Catupiry R$ 8,00 | Borda de cheddar R$ 8,00 | Mussarela extra R$ 6,00 | Bacon R$ 5,00
+### Salgadas
 
-### Tradicionais
-Foto: pizza tradicional.jpg
+- Pizza de Mussarela: P (25 cm) R$ 40,00 | M (30 cm) R$ 42,00 | F (35 cm) R$ 50,00 | G (40 cm) R$ 65,00 | GG (45 cm) R$ 73,00. Molho, mussarela e orégano. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza de Calabresa: P (25 cm) R$ 43,00 | M (30 cm) R$ 50,00 | F (35 cm) R$ 58,00 | G (40 cm) R$ 74,00 | GG (45 cm) R$ 82,00. Molho, mussarela e calabresa. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza de Presunto: P (25 cm) R$ 41,00 | M (30 cm) R$ 48,00 | F (35 cm) R$ 54,00 | G (40 cm) R$ 71,00 | GG (45 cm) R$ 76,00. Molho, mussarela e presunto. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza de Bacon: P (25 cm) R$ 42,00 | M (30 cm) R$ 49,00 | F (35 cm) R$ 56,00 | G (40 cm) R$ 72,00 | GG (45 cm) R$ 80,00. Molho, mussarela e bacon. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza Xuxa: P (25 cm) R$ 41,00 | M (30 cm) R$ 49,00 | F (35 cm) R$ 55,00 | G (40 cm) R$ 70,00 | GG (45 cm) R$ 80,00. Molho, mussarela e catupiry. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza Marguerita: P (25 cm) R$ 42,00 | M (30 cm) R$ 47,00 | F (35 cm) R$ 52,00 | G (40 cm) R$ 68,00 | GG (45 cm) R$ 77,00. Molho, mussarela, tomates e manjericão. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza Mista: P (25 cm) R$ 43,00 | M (30 cm) R$ 51,00 | F (35 cm) R$ 60,00 | G (40 cm) R$ 74,00 | GG (45 cm) R$ 84,00. Molho, mussarela, calabresa, presunto e bacon. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza 4 Queijos: P (25 cm) R$ 45,00 | M (30 cm) R$ 53,00 | F (35 cm) R$ 62,00 | G (40 cm) R$ 80,00 | GG (45 cm) R$ 88,00. Molho, mussarela, queijo prato, queijo provolone e catupiry. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza Mineira: P (25 cm) R$ 47,00 | M (30 cm) R$ 58,00 | F (35 cm) R$ 67,00 | G (40 cm) R$ 83,00 | GG (45 cm) R$ 96,00. Molho, mussarela, calabresa, bacon, presunto, frango e catupiry. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza de Frango com Catupiry: P (25 cm) R$ 46,00 | M (30 cm) R$ 54,00 | F (35 cm) R$ 63,00 | G (40 cm) R$ 79,00 | GG (45 cm) R$ 87,00. Molho, mussarela, frango e catupiry. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza Portuguesa: P (25 cm) R$ 47,00 | M (30 cm) R$ 55,00 | F (35 cm) R$ 64,00 | G (40 cm) R$ 81,00 | GG (45 cm) R$ 87,00. Molho, mussarela, calabresa, presunto, milho, ervilha, ovo e azeitonas. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza Tropeira: P (25 cm) R$ 48,00 | M (30 cm) R$ 60,00 | F (35 cm) R$ 73,00 | G (40 cm) R$ 86,00 | GG (45 cm) R$ 96,00. Molho, mussarela, carne seca e catupiry. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza Piraúba: P (25 cm) R$ 46,00 | M (30 cm) R$ 51,00 | F (35 cm) R$ 55,00 | G (40 cm) R$ 77,00 | GG (45 cm) R$ 88,00. Molho, mussarela e sardinha. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza de Palmito: P (25 cm) R$ 42,00 | M (30 cm) R$ 51,00 | F (35 cm) R$ 63,00 | G (40 cm) R$ 77,00 | GG (45 cm) R$ 85,00. Molho, mussarela e palmito. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza de Palmito com Frango: P (25 cm) R$ 45,00 | M (30 cm) R$ 52,00 | F (35 cm) R$ 63,00 | G (40 cm) R$ 81,00 | GG (45 cm) R$ 83,00. Molho, mussarela, palmito e frango. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza de Alho: P (25 cm) R$ 41,00 | M (30 cm) R$ 47,00 | F (35 cm) R$ 52,00 | G (40 cm) R$ 77,00 | GG (45 cm) R$ 85,00. Molho, mussarela e alho. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza de Atum: P (25 cm) R$ 42,00 | M (30 cm) R$ 54,00 | F (35 cm) R$ 63,00 | G (40 cm) R$ 83,00 | GG (45 cm) R$ 89,00. Molho, mussarela e atum. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza de Champignon com Presunto: P (25 cm) R$ 43,00 | M (30 cm) R$ 51,00 | F (35 cm) R$ 63,00 | G (40 cm) R$ 76,00 | GG (45 cm) R$ 88,00. Molho, mussarela, champignon e presunto. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
 
-- Pizza de Mussarela: Média R$ 38,00 | Grande R$ 48,00. Molho de tomate, mussarela e orégano.
-- Pizza de Calabresa: Média R$ 40,00 | Grande R$ 52,00. Calabresa fatiada, cebola e mussarela.
-- Pizza Portuguesa: Média R$ 44,00 | Grande R$ 56,00. Presunto, ovo, cebola, ervilha e mussarela.
+### Doces
 
-### Especiais
-Foto: pizza especial.jpg
-
-- Pizza de Frango com Catupiry: Média R$ 46,00 | Grande R$ 58,00. Frango desfiado, Catupiry e mussarela.
-- Pizza Quatro Queijos: Média R$ 48,00 | Grande R$ 60,00. Mussarela, provolone, gorgonzola e parmesão.
+- Pizza Gosto Mineiro: P (25 cm) R$ 42,00 | M (30 cm) R$ 48,00 | F (35 cm) R$ 63,00 | G (40 cm) R$ 77,00 | GG (45 cm) R$ 85,00. Mussarela, goiabada, banana, açúcar e canela. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza Banana Nevada: P (25 cm) R$ 48,00 | M (30 cm) R$ 57,00 | F (35 cm) R$ 66,00 | G (40 cm) R$ 83,00 | GG (45 cm) R$ 92,00. Mussarela, banana e chocolate branco. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-1.png
+- Pizza de Chocolate: P (25 cm) R$ 48,00 | M (30 cm) R$ 57,00 | F (35 cm) R$ 66,00 | G (40 cm) R$ 83,00 | GG (45 cm) R$ 92,00. Mussarela, chocolate e confete. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
+- Pizza de Banana: P (25 cm) R$ 42,00 | M (30 cm) R$ 48,00 | F (35 cm) R$ 63,00 | G (40 cm) R$ 77,00 | GG (45 cm) R$ 86,00. Mussarela, banana, açúcar e canela. Tamanhos G e GG acompanham refrigerante.
+  Foto: pizza-2.png
 
 ## 🍔 Lanches
 
-Adicionais: Bacon R$ 4,00 | Ovo R$ 3,00 | Queijo extra R$ 3,00
+- Hambúrguer - R$ 10,50: Pão, carne e salada.
+- X-Burguer - R$ 12,00: Pão, carne, queijo e salada.
+- X-Egg - R$ 13,00: Pão, carne, queijo, ovo e salada.
+- X-Calabresa - R$ 14,00: Pão, carne, queijo, calabresa e salada.
+- X-Bacon - R$ 14,00: Pão, carne, queijo, bacon e salada.
+- X-Egg Calabresa - R$ 15,00: Pão, carne, queijo, ovo, calabresa e salada.
+- X-Egg Bacon - R$ 15,00: Pão, carne, queijo, ovo, bacon e salada.
+- X-2 Carnes - R$ 15,00: Pão, 2 carnes, 2 queijos e salada.
+- X-Mineiro - R$ 23,00: Pão, 2 carnes, muito queijo, muito bacon, muita calabresa, ovo e salada.
+- X-Tudo - R$ 16,00: Pão, carne, queijo, calabresa, bacon, ovo e salada.
+- Trio Mineiro - R$ 23,00: Pão, 2 carnes, queijo, batata prea e refri lata.
+- X-Picanha - R$ 17,00: Pão, carne de picanha, queijo e salada.
+- X-Picanha Duplo - R$ 21,00: Pão, 2 carnes de picanha, queijo e salada.
 
-- X-Burger - R$ 22,00: Pão, hambúrguer de 150 g, queijo e salada.
-- X-Bacon - R$ 26,00: Pão, hambúrguer de 150 g, queijo, bacon e salada.
+## 🍟 Batatas
+
+- Batata: Pequena R$ 10,00 | Média R$ 15,00 | Grande R$ 27,00.
+- Batata do Mineiro - R$ 45,00: Batata grande com calabresa, carne seca, bacon, catupiry e cheddar.
+- Monte seu Trio - R$ 12,00: Batata pequena + refri lata.
+
+## 🥟 Pastéis
+
+- Pastel - R$ 12,00: Todos os sabores com o mesmo preço.
+  Foto: pastel.jpg
+  Sabor (obrigatório, escolher 1): Palmito com frango e catupiry, Champignon com presunto, Queijo com presunto, Queijo com calabresa, Frango com catupiry, Chocolate com banana, Romeu e Julieta, Carne, Queijo, 4 Queijos, Napolitano, Champignon, Banana, Chocolate
 
 ## 🥤 Bebidas
 
-- Refrigerante lata - R$ 6,00: 350 ml.
-  Sabor (obrigatório, escolher 1): Cola, Guaraná, Laranja
-- Suco natural: 300 ml R$ 8,00 | 500 ml R$ 12,00. Feito na hora.
-  Sabor (obrigatório, escolher 1): Laranja, Limão, Maracujá
-- Água mineral - R$ 4,00: 500 ml.
-  Tipo (obrigatório, escolher 1): Sem gás, Com gás
+> Preços de exemplo: o dono ainda vai confirmar os valores.
 
-## 🍰 Sobremesas
-
-- Brownie com sorvete - R$ 18,00: Brownie quentinho com bola de sorvete.
-  Sabor do sorvete (obrigatório, até 2): Chocolate, Morango, Baunilha
-- Pudim - R$ 10,00: Pudim de leite condensado.
+- Del Valle - R$ 5,00: 290 ml.
+  Foto: del-valle.jpeg
+- Coca-Cola 310 ml - R$ 6,00: Lata 310 ml.
+  Foto: coca-cola-latinha.jpeg
+  Tipo (obrigatório, escolher 1): Comum, Zero
+- Água Tônica - R$ 6,00: 350 ml.
+  Foto: tonica.jpeg
+- Pepsi - R$ 9,00: 1,5 L.
+  Foto: pepsi.jpeg
+- Coca-Cola 2 L - R$ 14,00: 2 litros.
+  Foto: coca-cola-2l.jpeg
+- Sukita 2 L - R$ 10,00: 2 litros.
+  Foto: sukita-e-kuat.jpeg
+  Sabor (obrigatório, escolher 1): Laranja, Uva, Kuat
+- Guaracamp - R$ 4,00: 285 ml.
+  Foto: guaracamp.jpeg
 
 ## Destaque
-Produto: Pizza Quatro Queijos
-Foto: destaque.jpg
-Frase: Mussarela, provolone, gorgonzola e parmesão
+Produto: Pizza Mineira
+Frase: Mussarela, calabresa, bacon, presunto, frango e catupiry
+Foto: destaque.png
