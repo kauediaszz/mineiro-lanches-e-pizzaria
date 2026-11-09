@@ -1,9 +1,10 @@
 {
-  "_gerado": "GERADO a partir de conteudo/cardapio.md. NÃ£o edite Ã  mÃ£o: edite o .md e peÃ§a para a IA regenerar (veja o AGENTS.md).",
+  "_gerado": "GERADO a partir de conteudo/cardapio.md. Não edite à mão: edite o .md e peça para a IA regenerar (veja o AGENTS.md).",
   "categories": [
     {
       "id": "pizzas",
       "label": "Pizzas",
+      "halfHalfFrom": "G (40 cm)",
       "emoji": "🍕"
     },
     {
@@ -718,7 +719,8 @@
       "category": "lanches",
       "price": 10.5,
       "description": "Pão, carne e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-burguer",
@@ -726,7 +728,8 @@
       "category": "lanches",
       "price": 12,
       "description": "Pão, carne, queijo e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-egg",
@@ -734,7 +737,8 @@
       "category": "lanches",
       "price": 13,
       "description": "Pão, carne, queijo, ovo e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-calabresa",
@@ -742,7 +746,8 @@
       "category": "lanches",
       "price": 14,
       "description": "Pão, carne, queijo, calabresa e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-bacon",
@@ -750,7 +755,8 @@
       "category": "lanches",
       "price": 14,
       "description": "Pão, carne, queijo, bacon e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-egg-calabresa",
@@ -758,7 +764,8 @@
       "category": "lanches",
       "price": 15,
       "description": "Pão, carne, queijo, ovo, calabresa e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-egg-bacon",
@@ -766,7 +773,8 @@
       "category": "lanches",
       "price": 15,
       "description": "Pão, carne, queijo, ovo, bacon e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-2-carnes",
@@ -774,7 +782,8 @@
       "category": "lanches",
       "price": 15,
       "description": "Pão, 2 carnes, 2 queijos e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-mineiro",
@@ -782,7 +791,8 @@
       "category": "lanches",
       "price": 23,
       "description": "Pão, 2 carnes, muito queijo, muito bacon, muita calabresa, ovo e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-tudo",
@@ -790,7 +800,8 @@
       "category": "lanches",
       "price": 16,
       "description": "Pão, carne, queijo, calabresa, bacon, ovo e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "trio-mineiro",
@@ -798,7 +809,8 @@
       "category": "lanches",
       "price": 23,
       "description": "Pão, 2 carnes, queijo, batata prea e refri lata.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-picanha",
@@ -806,7 +818,8 @@
       "category": "lanches",
       "price": 17,
       "description": "Pão, carne de picanha, queijo e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "x-picanha-duplo",
@@ -814,7 +827,8 @@
       "category": "lanches",
       "price": 21,
       "description": "Pão, 2 carnes de picanha, queijo e salada.",
-      "emoji": "ðŸ”"
+      "emoji": "ðŸ”",
+      "image": "lanche-padrao.png"
     },
     {
       "id": "batata",
@@ -834,7 +848,8 @@
           "price": 27
         }
       ],
-      "emoji": "ðŸŸ"
+      "emoji": "ðŸŸ",
+      "image": "batata-comum.png"
     },
     {
       "id": "batata-do-mineiro",
@@ -842,15 +857,8 @@
       "category": "batatas",
       "price": 45,
       "description": "Batata grande com calabresa, carne seca, bacon, catupiry e cheddar.",
-      "emoji": "ðŸŸ"
-    },
-    {
-      "id": "monte-seu-trio",
-      "name": "Monte seu Trio",
-      "category": "batatas",
-      "price": 12,
-      "description": "Batata pequena + refri lata.",
-      "emoji": "ðŸŸ"
+      "emoji": "ðŸŸ",
+      "image": "batata-bacon-calabresa.png"
     },
     {
       "id": "pastel",
@@ -858,8 +866,31 @@
       "category": "pasteis",
       "price": 12,
       "description": "Todos os sabores com o mesmo preço.",
-      "emoji": "ðŸ¥Ÿ",
-      "image": "pastel.jpg"
+      "emoji": "🥟",
+      "image": "pastel.jpg",
+      "optionGroups": [
+        {
+          "title": "Sabor",
+          "type": "single",
+          "required": true,
+          "options": [
+            "Palmito com frango e catupiry",
+            "Champignon com presunto",
+            "Queijo com presunto",
+            "Queijo com calabresa",
+            "Frango com catupiry",
+            "Chocolate com banana",
+            "Romeu e Julieta",
+            "Carne",
+            "Queijo",
+            "4 Queijos",
+            "Napolitano",
+            "Champignon",
+            "Banana",
+            "Chocolate"
+          ]
+        }
+      ]
     },
     {
       "id": "del-valle",

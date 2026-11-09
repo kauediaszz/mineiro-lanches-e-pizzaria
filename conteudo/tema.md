@@ -6,6 +6,7 @@ Slogan: Sabor que une família e tradição
 Emoji: 🍕
 WhatsApp: (21) 99025-1700
 Endereço: Rua Leonardo da Vinci, 47 - Senador Camará
+Horário: Terça a domingo, das 18h às 23h59. Segunda fechado.
 Entrega: Taxa de entrega R$ 5,00
 
 ## Cores

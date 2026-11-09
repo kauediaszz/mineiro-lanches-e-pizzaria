@@ -15,6 +15,28 @@ export function isSimpleProduct(product: Product): boolean {
   );
 }
 
+/** true se o tamanho escolhido aceita meio a meio */
+export function allowsHalfHalf(product: Product, variant: Variant): boolean {
+  return (
+    product.halfHalfFrom !== undefined &&
+    product.variants.indexOf(variant) >= product.halfHalfFrom
+  );
+}
+
+/** Outros produtos da mesma categoria que podem ser a outra metade */
+export function halfHalfCandidates(
+  product: Product,
+  variant: Variant,
+  all: Product[]
+): Product[] {
+  return all.filter(
+    (p) =>
+      p.id !== product.id &&
+      p.category === product.category &&
+      p.variants.some((v) => v.id === variant.id)
+  );
+}
+
 /** Escolhas feitas pelo cliente: id do grupo -> opções marcadas */
 export type Choices = Record<string, string[]>;
 
@@ -27,7 +49,8 @@ export function buildCartLine(
   product: Product,
   variant: Variant,
   choices: Choices = {},
-  addons: Addon[] = []
+  addons: Addon[] = [],
+  half?: Product
 ): Omit<CartItem, "quantity"> {
   const groups = product.optionGroups ?? [];
 
@@ -36,10 +59,16 @@ export function buildCartLine(
     const picked = choices[group.id] ?? [];
     if (picked.length > 0) details.push(`${group.title}: ${picked.join(", ")}`);
   }
+  // Meio a meio: cobra o sabor mais caro entre os dois, no mesmo tamanho
+  const halfVariant = half?.variants.find((v) => v.id === variant.id);
+  const basePrice = halfVariant
+    ? Math.max(variant.price, halfVariant.price)
+    : variant.price;
+  if (half) details.unshift(`Meio a meio: ½ ${product.name} + ½ ${half.name}`);
   for (const addon of addons) details.push(`+ ${addon.label}`);
 
   const price =
-    variant.price + addons.reduce((sum, addon) => sum + addon.price, 0);
+    basePrice + addons.reduce((sum, addon) => sum + addon.price, 0);
 
   const lineId = [
     product.id,
@@ -47,6 +76,7 @@ export function buildCartLine(
     ...groups.map(
       (g) => `${g.id}=${[...(choices[g.id] ?? [])].sort().join("+")}`
     ),
+    half ? `meio=${half.id}` : "",
     addons
       .map((a) => a.id)
       .sort()

@@ -2,6 +2,8 @@
 
 ## 🍕 Pizzas
 
+Meio a meio: a partir de G (40 cm), com qualquer outra pizza (salgada ou doce). Vale o preço do sabor mais caro.
+
 ### Salgadas
 
 - Pizza de Mussarela: P (25 cm) R$ 40,00 | M (30 cm) R$ 42,00 | F (35 cm) R$ 50,00 | G (40 cm) R$ 65,00 | GG (45 cm) R$ 73,00. Molho, mussarela e orégano. Tamanhos G e GG acompanham refrigerante.
@@ -54,6 +56,8 @@
 
 ## 🍔 Lanches
 
+Foto: lanche-padrao.png
+
 - Hambúrguer - R$ 10,50: Pão, carne e salada.
 - X-Burguer - R$ 12,00: Pão, carne, queijo e salada.
 - X-Egg - R$ 13,00: Pão, carne, queijo, ovo e salada.
@@ -71,8 +75,9 @@
 ## 🍟 Batatas
 
 - Batata: Pequena R$ 10,00 | Média R$ 15,00 | Grande R$ 27,00.
+  Foto: batata-comum.png
 - Batata do Mineiro - R$ 45,00: Batata grande com calabresa, carne seca, bacon, catupiry e cheddar.
-- Monte seu Trio - R$ 12,00: Batata pequena + refri lata.
+  Foto: batata-bacon-calabresa.png
 
 ## 🥟 Pastéis
 

@@ -54,6 +54,8 @@ export interface Product {
   variants: Variant[];
   optionGroups?: OptionGroup[];
   addons?: Addon[];
+  /** Permite meio a meio a partir deste tamanho (índice em variants) */
+  halfHalfFrom?: number;
 }
 
 /* ------------------------------------------------------------------ */
@@ -95,7 +97,13 @@ interface RawProduct {
 }
 
 interface RawMenu {
-  categories: { id: string; label: string; emoji?: string }[];
+  categories: {
+    id: string;
+    label: string;
+    emoji?: string;
+    /** Rótulo do menor tamanho que aceita meio a meio (ex: "G (40 cm)") */
+    halfHalfFrom?: string;
+  }[];
   addonSets?: Record<string, RawAddon[]>;
   optionSets?: Record<string, RawOptionGroup>;
   products: RawProduct[];
@@ -189,6 +197,11 @@ export const products: Product[] = raw.products.map((p) => {
 
   const optionGroups = (p.optionGroups ?? []).map((g) => buildGroup(p.id, g));
   const addons = p.addons ? buildAddons(p.id, p.addons) : [];
+  const variants = buildVariants(p);
+  const halfLabel = raw.categories.find((c) => c.id === p.category)?.halfHalfFrom;
+  const halfIndex = halfLabel
+    ? variants.findIndex((v) => v.label === halfLabel)
+    : -1;
 
   return {
     id: p.id,
@@ -198,9 +211,10 @@ export const products: Product[] = raw.products.map((p) => {
     emoji: p.emoji || undefined,
     category: p.category,
     section: p.section || undefined,
-    variants: buildVariants(p),
+    variants,
     optionGroups: optionGroups.length > 0 ? optionGroups : undefined,
     addons: addons.length > 0 ? addons : undefined,
+    halfHalfFrom: halfIndex >= 0 ? halfIndex : undefined,
   };
 });
 

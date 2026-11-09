@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { products as allProducts } from "@/data/menu";
 import type { OptionGroup, Product } from "@/data/menu";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/format";
-import { buildCartLine, Choices } from "@/lib/product";
+import {
+  allowsHalfHalf,
+  buildCartLine,
+  Choices,
+  halfHalfCandidates,
+} from "@/lib/product";
 import { ProductImage } from "@/components/ProductImage";
 
 /**
@@ -24,6 +30,7 @@ export function ProductModal({
   const [choices, setChoices] = useState<Choices>({});
   const [addonIds, setAddonIds] = useState<string[]>([]);
   const [quantity, setQuantity] = useState(1);
+  const [halfId, setHalfId] = useState<string | null>(null);
 
   // Trava o scroll da página e fecha com Esc
   useEffect(() => {
@@ -47,8 +54,16 @@ export function ProductModal({
     addonIds.includes(a.id)
   );
 
+  const halfCandidates = allowsHalfHalf(product, variant)
+    ? halfHalfCandidates(product, variant, allProducts)
+    : [];
+  const half = halfCandidates.find((p) => p.id === halfId);
+  const halfVariant = half?.variants.find((v) => v.id === variant.id);
+  const basePrice = halfVariant
+    ? Math.max(variant.price, halfVariant.price)
+    : variant.price;
   const unitPrice =
-    variant.price + selectedAddons.reduce((sum, a) => sum + a.price, 0);
+    basePrice + selectedAddons.reduce((sum, a) => sum + a.price, 0);
   const total = unitPrice * quantity;
 
   const missingGroups = useMemo(
@@ -87,7 +102,7 @@ export function ProductModal({
 
   function handleAdd() {
     if (!canAdd) return;
-    addLine(buildCartLine(product, variant, choices, selectedAddons), quantity);
+    addLine(buildCartLine(product, variant, choices, selectedAddons, half), quantity);
     onClose();
   }
 
@@ -163,6 +178,41 @@ export function ProductModal({
                       >
                         <span>{v.label}</span>
                         <span>{formatPrice(v.price)}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </fieldset>
+            )}
+
+            {/* Meio a meio (a partir de certo tamanho) */}
+            {halfCandidates.length > 0 && (
+              <fieldset>
+                <legend className="mb-2 flex w-full items-center justify-between text-sm font-bold text-foreground/60 uppercase tracking-wide">
+                  <span>Meio a meio</span>
+                  <span className="rounded-full bg-foreground/10 px-2 py-0.5 text-[10px] font-bold normal-case tracking-normal text-foreground/60">
+                    Opcional
+                  </span>
+                </legend>
+                <p className="mb-2 text-[11px] text-foreground/60">
+                  Escolha o outro sabor. Vale o preço do sabor mais caro.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {halfCandidates.map((p) => {
+                    const active = p.id === halfId;
+                    return (
+                      <button
+                        key={p.id}
+                        type="button"
+                        aria-pressed={active}
+                        onClick={() => setHalfId(active ? null : p.id)}
+                        className={`rounded-full border px-3.5 py-2 text-sm font-semibold transition-all ${
+                          active
+                            ? "border-transparent bg-brand-gradient text-white shadow-brand"
+                            : "border-accent/20 bg-surface text-foreground hover:border-accent/40"
+                        }`}
+                      >
+                        {p.name}
                       </button>
                     );
                   })}

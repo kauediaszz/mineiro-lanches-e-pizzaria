@@ -5,5 +5,16 @@
   "emoji": "🍕",
   "whatsapp": "5521990251700",
   "address": "Rua Leonardo da Vinci, 47 - Senador Camará",
-  "deliveryInfo": "Taxa de entrega R$ 5,00"
+  "deliveryInfo": "Taxa de entrega R$ 5,00",
+  "hours": {
+    "schedule": [
+      {
+        "days": [2, 3, 4, 5, 6, 0],
+        "label": "Ter a Dom",
+        "open": "18:00",
+        "close": "23:59"
+      }
+    ],
+    "closedNote": "Segunda fechado"
+  }
 }
